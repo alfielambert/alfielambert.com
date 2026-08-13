@@ -150,33 +150,74 @@ export const about = {
   ],
 }
 
-export const speaking = [
+export interface SpeakingLink {
+  label: string
+  href: string
+}
+
+export interface SpeakingItem {
+  type: string
+  title: string
+  description: string
+  stats: string[]
+  image: string
+  imageAlt: string
+  imageHref: string
+  imageAriaLabel: string
+  isVideo: boolean
+  links: SpeakingLink[]
+}
+
+export const speaking: SpeakingItem[] = [
   {
     type: 'Podcast host',
-    title: 'The M&AZing Podcast',
+    title: 'The M&A Zing Podcast',
     description:
       'I created and hosted a specialist podcast covering the small-business acquisition market. Across 44 full episodes, I interviewed founders, investors and acquisition entrepreneurs. The Buy-Side Breakdown series assessed real businesses for sale and how a buyer might grow them.',
     stats: ['44 full episodes', 'Nearly 9,500 combined listens and views'],
-    // TODO: Add podcast artwork — place at /assets/mazing-podcast.jpg
-    image: null as string | null,
+    image: '/assets/mazing-podcast.jpg',
+    imageAlt: 'Cover art for The M&A Zing Podcast, featuring Alfie Lambert',
+    imageHref: 'https://open.spotify.com/show/6Plsau3DROLuv0ayBEZG6O',
+    imageAriaLabel: 'Listen to The M&A Zing Podcast on Spotify',
+    isVideo: false,
+    links: [
+      { label: 'Listen on Spotify', href: 'https://open.spotify.com/show/6Plsau3DROLuv0ayBEZG6O' },
+    ],
   },
   {
-    type: 'Investor showcase',
-    title: 'BlockDojo Cohort 5 at Plexal',
+    type: 'Media interview',
+    title: 'CoinGeek Interview',
     description:
-      'Delivered the investor showcase pitch for BizCrunch at the BlockDojo Cohort 5 event at Plexal, following completion of the accelerator programme.',
+      'Interviewed during the Block Dojo accelerator about BizCrunch, the acquisition market and how we were using data and technology to improve the process of buying and selling businesses.',
     stats: [],
-    // TODO: Add image from Plexal pitch — place at /assets/plexal-pitch.jpg
-    image: null as string | null,
+    image: '/assets/coingeek-interview.jpg',
+    imageAlt: 'CoinGeek Conversations interview thumbnail featuring BizCrunch',
+    imageHref: 'https://www.youtube.com/watch?v=inLbFm5LS4U',
+    imageAriaLabel: 'Watch the CoinGeek interview on YouTube',
+    isVideo: true,
+    links: [
+      { label: 'Watch interview', href: 'https://www.youtube.com/watch?v=inLbFm5LS4U' },
+      {
+        label: 'Read article',
+        href: 'https://coingeek.com/block-dojo-startups-sports-finex-and-bizcrunch-improving-business-efficiency-with-blockchain-video/',
+      },
+    ],
   },
   {
     type: 'Conference talk',
     title: 'London Blockchain Conference',
     description:
-      'Spoke at the London Blockchain Conference and joined an early-stage startup panel discussing company building, growth and investment.',
+      'Spoke on entrepreneurship through acquisition and joined an early-stage company panel covering company building, growth and investment.',
     stats: [],
-    // TODO: Add conference image — place at /assets/lbc-talk.jpg
-    image: null as string | null,
+    image: '/assets/lbc-talk.jpg',
+    imageAlt: 'Alfie Lambert speaking on stage at the London Blockchain Conference',
+    imageHref: 'https://youtu.be/ozCdym6VKOs?si=MHM98OWUtUOXyWs6',
+    imageAriaLabel: 'Watch the London Blockchain Conference talk on YouTube',
+    isVideo: true,
+    links: [
+      { label: 'Watch talk', href: 'https://youtu.be/ozCdym6VKOs?si=MHM98OWUtUOXyWs6' },
+      { label: 'Past speaker listing', href: 'https://londonblockchain.net/speakers/past-speakers/' },
+    ],
   },
 ]
 
