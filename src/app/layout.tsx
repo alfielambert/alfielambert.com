@@ -30,13 +30,13 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Alfie Lambert | Founder, Product and Growth',
   description:
-    'Founder and product-growth leader building and taking AI, data and SaaS products to market. Experience across product strategy, go-to-market, fundraising and early-stage company building.',
+    'Founder and product-growth operator building AI, data and SaaS products, GTM systems and internal tools. Twelve years across product, growth and company building.',
   metadataBase: new URL('https://alfielambert.com'),
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Alfie Lambert | Founder, Product and Growth',
     description:
-      'Founder and product-growth leader building and taking AI, data and SaaS products to market.',
+      'Founder and product-growth operator building AI, data and SaaS products, GTM systems and internal tools. Twelve years across product, growth and company building.',
     url: 'https://alfielambert.com',
     siteName: 'Alfie Lambert',
     locale: 'en_GB',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Alfie Lambert | Founder, Product and Growth',
     description:
-      'Founder and product-growth leader building and taking AI, data and SaaS products to market.',
+      'Founder and product-growth operator building AI, data and SaaS products, GTM systems and internal tools. Twelve years across product, growth and company building.',
   },
   robots: { index: true, follow: true },
 }
