@@ -5,6 +5,7 @@ import { meta } from '@/lib/content'
 
 const navLinks = [
   { label: 'Work', href: '#work' },
+  { label: 'Building', href: '#building' },
   { label: 'What I do', href: '#what-i-do' },
   { label: 'About', href: '#about' },
   { label: 'Speaking', href: '#speaking' },

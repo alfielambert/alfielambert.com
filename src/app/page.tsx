@@ -1,6 +1,7 @@
 import { SiteHeader } from '@/components/SiteHeader'
 import { Hero } from '@/components/Hero'
 import { SelectedWork } from '@/components/SelectedWork'
+import { Building } from '@/components/Building'
 import { WhatIDo } from '@/components/WhatIDo'
 import { About } from '@/components/About'
 import { Speaking } from '@/components/Speaking'
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <Hero />
         <SelectedWork />
+        <Building />
         <WhatIDo />
         <About />
         <Speaking />

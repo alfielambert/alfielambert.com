@@ -39,7 +39,7 @@ export function Speaking() {
   return (
     <section id="speaking" className="bg-cream-dark border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <SectionLabel number="05" label="Speaking and media" />
+        <SectionLabel number="06" label="Speaking and media" />
 
         <h2 className="font-display font-extrabold text-3xl md:text-4xl mt-6 mb-4 tracking-tight">
           On stage and on air

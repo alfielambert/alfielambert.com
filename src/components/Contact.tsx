@@ -23,7 +23,7 @@ export function Contact() {
   return (
     <section id="contact" className="bg-ink border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
-        <SectionLabel number="07" label="Contact" light />
+        <SectionLabel number="08" label="Contact" light />
 
         <motion.div
           initial={shouldReduce ? {} : { opacity: 0, y: 32 }}
@@ -93,7 +93,7 @@ export function Contact() {
                 variant="outline"
                 size="lg"
                 external
-                className="border-cream/40 text-cream hover:bg-cream hover:text-ink"
+                className="!border-cream/40 !text-cream hover:!bg-cream hover:!text-ink"
               >
                 Download CV
               </BrutalistButton>
@@ -105,11 +105,21 @@ export function Contact() {
                 variant="outline"
                 size="lg"
                 external
-                className="border-cream/40 text-cream hover:bg-cream hover:text-ink"
+                className="!border-cream/40 !text-cream hover:!bg-cream hover:!text-ink"
               >
                 Book a call
               </BrutalistButton>
             )}
+
+            <BrutalistButton
+              href={meta.githubUrl}
+              variant="outline"
+              size="lg"
+              external
+              className="!border-cream/40 !text-cream hover:!bg-cream hover:!text-ink"
+            >
+              GitHub
+            </BrutalistButton>
           </div>
         </motion.div>
       </div>

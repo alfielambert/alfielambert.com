@@ -10,7 +10,7 @@ export function About() {
   return (
     <section id="about" className="border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <SectionLabel number="04" label="About" />
+        <SectionLabel number="05" label="About" />
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mt-12 items-start">
           {/* Copy */}

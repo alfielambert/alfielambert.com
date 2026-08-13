@@ -1,5 +1,6 @@
 export const meta = {
   email: 'alfielambert@zoho.com',
+  githubUrl: 'https://github.com/alfielambert',
   // TODO: Add booking link when available
   bookingLink: null as string | null,
   // TODO: Add CV PDF when available — place at /cv.pdf in public/
@@ -9,7 +10,7 @@ export const meta = {
 export const hero = {
   headlineParts: ['I build and take', 'AI, data & SaaS', 'products to market.'],
   subheading:
-    'Founder and product-growth leader with more than 12 years of experience across product strategy, positioning, go-to-market, fundraising and early-stage company building.',
+    'Founder and product-growth leader with more than 12 years of experience across product strategy, positioning, go-to-market, fundraising and early-stage company building. I also build the AI tools and GTM systems I need myself, taking commercial problems from idea to working software.',
   evidence: [
     'Raised pre-seed and seed investment',
     'Built products used by tens of thousands',
@@ -50,6 +51,7 @@ export const projects: Project[] = [
       'Two signed letters of intent before launch',
       'Developed an enterprise and partner pipeline before launch',
       'Produced the investor narrative, pitch materials and market messaging',
+      'Built GEOYA and other internal GTM and market-intelligence tooling',
     ],
     tags: ['AI Infrastructure', 'Knowledge Layer', 'Agent Context'],
     accentColor: 'yellow',
@@ -136,10 +138,70 @@ export const capabilities = [
   },
   {
     number: '04',
-    title: 'Technical communication',
-    body: 'Helping customers, investors and teams understand complex AI and data products. Translating difficult infrastructure into clear commercial value.',
+    title: 'AI-assisted product building',
+    body: 'Building internal tools, agents and GTM systems myself, combining APIs, automation and custom code. That turns a commercial problem into working software without always needing to hand it to engineering.',
   },
 ]
+
+export type BuildVisual =
+  | { type: 'flow'; steps: string[] }
+  | { type: 'list'; items: string[] }
+  | { type: 'transform'; from: string; to: string }
+
+export interface BuildProject {
+  number: string
+  title: string
+  description: string
+  visual: BuildVisual
+  tags: string[]
+}
+
+export const building = {
+  intro:
+    'AI-assisted development means I can build more of my own GTM infrastructure myself, rather than briefing it to an engineering team or buying another SaaS tool. These are three systems built to solve specific commercial problems.',
+  projects: [
+    {
+      number: '01',
+      title: 'GEOYA',
+      description:
+        'Traditional SEO metrics don\'t tell you whether ChatGPT, Claude, Gemini or Perplexity actually recommend your company when someone asks about your category, or who gets recommended instead. GEOYA is an internal system I built at Oiya that runs structured prompts across multiple AI models and turns the responses into competitive intelligence.',
+      visual: {
+        type: 'list',
+        items: [
+          'Tracks how often a brand is recommended',
+          'Surfaces which competitors appear instead',
+          'Flags content and positioning gaps',
+        ],
+      },
+      tags: ['Python', 'Next.js', 'Multi-model LLMs'],
+    },
+    {
+      number: '02',
+      title: 'Intent-based prospecting',
+      description:
+        'Most prospecting starts from static attributes: job title, sector, company size. This system starts from what people are actually talking about. It searches LinkedIn posts for relevant conversations, then qualifies and enriches the people behind them into outreach-ready prospects, giving me an intent signal around almost any market I want to investigate.',
+      visual: {
+        type: 'flow',
+        steps: ['Conversation', 'Person', 'Qualification', 'Enrichment', 'Prospect'],
+      },
+      tags: ['APIs', 'n8n', 'LLM classification'],
+    },
+    {
+      number: '03',
+      title: 'Hiring signal intelligence',
+      description:
+        'Job adverts show what companies are actually spending money and hiring people to do, often before it becomes obvious in surveys or press coverage. This system analyses job postings against configurable keywords and themes to surface where hiring demand is increasing, which sectors are investing, and where that points to a GTM opportunity.',
+      visual: {
+        type: 'transform',
+        from: 'Job postings',
+        to: 'Market signal',
+      },
+      tags: ['Job data', 'Python', 'LLM classification'],
+    },
+  ] as BuildProject[],
+  closing:
+    'Alongside these three, I build smaller workflows around lead research, qualification, enrichment and account segmentation, combining n8n, APIs, LLMs and custom code as needed — sometimes for judgement, sometimes deliberately deterministic. The pattern is the same each time: take a commercial idea, turn the data and logic behind it into a working tool, and use it to drive a GTM outcome.',
+}
 
 export const about = {
   paragraphs: [
