@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# alfielambert.com
 
-## Getting Started
+My personal website: [alfielambert.com](https://alfielambert.com)
 
-First, run the development server:
+I’m a founder and product/GTM operator working across AI, data and SaaS. Cofounder @ Oiya (https:www.oiya.ai) A growing part of my work involves building the tools, agents and internal systems I need myself, using AI-assisted development alongside APIs, automation and custom code.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This site is one example of that way of working.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About the site
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I built `alfielambert.com` as a home for my work, experience and projects outside LinkedIn.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+It covers:
 
-## Learn More
+* Products and companies I’ve helped build and take to market
+* Product strategy and positioning
+* Go-to-market work
+* Early-stage company building
+* AI-assisted product development
+* Internal GTM tools and systems I’ve built
+* Speaking, podcasts and media
 
-To learn more about Next.js, take a look at the following resources:
+The site is designed to be a useful professional record rather than a traditional online CV.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Building with AI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+I’m not a software engineer by training.
 
-## Deploy on Vercel
+My background is in product, growth, GTM and company building, but AI-assisted development has allowed me to work much further down the stack.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+That means I can increasingly move through:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**idea → data → logic → working tool → GTM outcome**
+
+without immediately handing the problem to an engineering team.
+
+I use that capability to build things such as:
+
+* AI visibility and recommendation analysis tools
+* Intent-based prospecting systems
+* Market intelligence from hiring and company data
+* Lead research and enrichment workflows
+* LLM-powered classification and research agents
+* GTM automations connecting APIs, data and internal systems
+
+The goal isn’t to automate everything. It’s to build the capability needed to solve a commercial problem when the right off-the-shelf product doesn’t exist.
+
+## Stack
+
+The site currently uses:
+
+* **Next.js**
+* **TypeScript**
+* **React**
+* **Git / GitHub**
+* **Cloudflare Workers**
+
+Development is AI-assisted, primarily using Claude alongside the usual development and debugging workflow.
+
+## Deployment
+
+The production site is hosted on Cloudflare Workers.
+
+Changes pushed to the main GitHub branch trigger an automated build and deployment through Cloudflare.
+
+
+## Repository
+
+This repository is public partly because I want the work itself to be visible.
+
+I’m interested in the point where product thinking, GTM and software increasingly overlap: understanding a commercial problem well enough to define it, finding the right data, and being able to build a working system around it.
+
+More about my work at [alfielambert.com](https://alfielambert.com).
