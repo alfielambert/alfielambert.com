@@ -1,6 +1,8 @@
 import { getAllPosts } from '@/lib/writing'
 import { author } from '@/lib/content'
 
+export const dynamic = 'force-static'
+
 const SITE_URL = 'https://alfielambert.com'
 
 function escapeXml(str: string) {
