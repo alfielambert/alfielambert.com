@@ -32,7 +32,10 @@ export const metadata: Metadata = {
   description:
     'Founder and product-growth operator building AI, data and SaaS products, GTM systems and internal tools.',
   metadataBase: new URL('https://alfielambert.com'),
-  alternates: { canonical: '/' },
+  alternates: {
+    canonical: '/',
+    types: { 'application/rss+xml': 'https://alfielambert.com/feed.xml' },
+  },
   openGraph: {
     title: 'Alfie Lambert | Founder, Product and Growth',
     description:

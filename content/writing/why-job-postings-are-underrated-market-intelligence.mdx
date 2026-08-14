@@ -1,0 +1,97 @@
+---
+title: "Why job postings are underrated market intelligence"
+description: "What hiring data can tell you about where companies are actually investing — used here as a demo article to QA every element of the writing system."
+date: "2026-08-14"
+updated: "2026-08-14"
+topics:
+  - GTM
+  - Data
+image: "/og-image.jpg"
+draft: true
+---
+
+<Callout label="Demo article">
+This article exists to visually QA the writing system — every heading level, list type, table, code block, callout, image and link it supports. The opening paragraph below is written in the voice a real post would use, but the specific figures throughout are illustrative, not researched claims. Delete this file once the design is approved.
+</Callout>
+
+Job postings are one of the cleanest ways to see where a company is actually investing. Strategy pages tell you what a company wants the market to believe. Hiring tells you which capabilities it's prepared to spend money building.
+
+That distinction matters more than it sounds. A company can put "AI-first" on its homepage for the cost of an afternoon. Opening five machine learning requisitions is a materially different signal — it shows up in budget, in headcount planning, and usually months before the resulting product ever gets announced.
+
+## Reading hiring data as a signal
+
+Most market research leans on things companies say publicly: press releases, product launches, conference talks. All of that is true, but all of it is also curated. Job postings are closer to a company's internal reality, for a simple reason: nobody writes a requisition to impress a journalist.
+
+That makes hiring data useful for a few different questions:
+
+- Which sectors are increasing investment in a given capability
+- Which specific technologies are appearing more often in job descriptions
+- Where a company is quietly building a team around something it hasn't announced
+- Where hiring demand is slowing, which is often a leading indicator before it shows up anywhere else
+
+### A worked example
+
+Take a hypothetical mid-size SaaS company. Its public messaging is steady quarter over quarter — nothing in the changelog suggests a shift in direction. But its job board tells a different story: three postings for "LLM evaluation," two for "applied ML," and a new "AI platform" team appearing in a senior hire's title.
+
+None of that is proof of a specific product. It is, however, a much stronger prior than anything on the company's homepage.
+
+In an illustrative dataset like this, you'd typically walk the analysis in this order:
+
+1. Pull postings for the sector or company list you care about
+2. Classify each posting against a fixed set of capability keywords
+3. Aggregate by month to see the trend, not just a snapshot
+4. Cross-reference against headcount or funding data, if available
+5. Treat the result as a prior to investigate, not a conclusion to publish
+
+<InBrief>
+- Job postings reflect budget and headcount decisions, not messaging
+- They move earlier than press coverage, product launches or investor updates
+- Structured well, they turn into a repeatable market-intelligence signal rather than a one-off research exercise
+</InBrief>
+
+## Why this is harder than it sounds
+
+The obvious objection: a single job posting is noisy. A company might be backfilling, over-hiring speculatively, or using inflated titles for recruiting purposes. All fair. The signal isn't in any one posting — it's in the trend across many, filtered against a consistent taxonomy.
+
+> A company can say a capability is a priority. Opening five roles for it, and keeping them open, is a much harder signal to fake.
+
+That's really the whole argument. Individual data points are weak. Structured, aggregated and tracked over time, they become one of the more honest signals available about what a company is actually doing.
+
+Here's a simplified illustration of what a monthly rollup might look like:
+
+| Month | ML-related postings | Sector average | Signal |
+|---|---|---|---|
+| Jan | 3 | 1.2 | Above average |
+| Feb | 4 | 1.4 | Above average |
+| Mar | 2 | 1.1 | Above average |
+| Apr | 1 | 1.3 | In line |
+
+Small tables like this are easy to skim and easy to keep updating without redesigning anything.
+
+## A minimal classification pass
+
+For technical readers, a first-pass classifier is usually just keyword matching against a controlled vocabulary before anything more sophisticated is worth building:
+
+```python
+KEYWORDS = ["machine learning", "llm", "applied ai", "ml engineer"]
+
+def classify(posting_text: str) -> bool:
+    text = posting_text.lower()
+    return any(keyword in text for keyword in KEYWORDS)
+```
+
+That's deliberately unglamorous. Most of the value in this kind of analysis comes from consistent classification and a clean pipeline, not from a clever model on day one.
+
+<Figure
+  src="/og-image.jpg"
+  alt="Placeholder chart used to demonstrate figure and figcaption styling in the writing system"
+  caption="Placeholder image — demonstrates the figure/figcaption treatment, border framing and caption styling used for real charts and screenshots."
+/>
+
+## Where this fits alongside other signals
+
+Hiring data isn't a replacement for talking to customers, reading filings or tracking product changes directly. It's a complement — evidence that's cheap to collect, updates continuously, and tends to move before a company's public narrative catches up with what it's actually doing.
+
+For more on the kind of systems this connects to, see the [hiring signal intelligence](/#building) project, or read more about [Schema.org's JobPosting type](https://schema.org/JobPosting) if you want the formal structure most job boards already publish against.
+
+The rest is mostly discipline: a consistent taxonomy, a repeatable pipeline, and treating any single data point as a prior rather than a conclusion.

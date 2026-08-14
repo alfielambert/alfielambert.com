@@ -3,35 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 import { speaking } from '@/lib/content'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-
-function ArrowUpRight() {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      aria-hidden="true"
-      className="flex-shrink-0 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-    >
-      <path d="M3 9L9 3M9 3H4.5M9 3V7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-function MediaLink({ label, href }: { label: string; href: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group inline-flex items-center gap-1.5 py-2 font-mono-alt text-xs tracking-widest uppercase text-ink border-b-2 border-ink/25 hover:border-ink focus-visible:border-ink transition-colors w-fit"
-    >
-      {label}
-      <ArrowUpRight />
-    </a>
-  )
-}
+import { MediaLink } from '@/components/ui/MediaLink'
 
 export function Speaking() {
   const shouldReduce = useReducedMotion()

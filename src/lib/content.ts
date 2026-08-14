@@ -1,3 +1,9 @@
+export const author = {
+  name: 'Alfie Lambert',
+  role: 'Founder, product & GTM operator.',
+  bio: 'I build AI, data and SaaS products and take them to market.',
+}
+
 export const meta = {
   email: 'alfielambert@zoho.com',
   githubUrl: 'https://github.com/alfielambert',
