@@ -1,15 +1,16 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 import { meta } from '@/lib/content'
 
 const navLinks = [
-  { label: 'Work', href: '#work' },
-  { label: 'Building', href: '#building' },
-  { label: 'What I do', href: '#what-i-do' },
-  { label: 'About', href: '#about' },
-  { label: 'Speaking', href: '#speaking' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Building', href: '/#building' },
+  { label: 'What I do', href: '/#what-i-do' },
+  { label: 'About', href: '/#about' },
+  { label: 'Speaking', href: '/#speaking' },
+  { label: 'Experience', href: '/#experience' },
 ]
 
 export function SiteHeader() {
@@ -33,35 +34,35 @@ export function SiteHeader() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16">
           {/* Wordmark */}
-          <a
-            href="#hero"
+          <Link
+            href="/"
             className="font-display font-extrabold text-lg tracking-tight text-ink hover:text-ink transition-colors"
             aria-label="Alfie Lambert — home"
           >
             <span className="text-ink">A</span>
             <span className="text-yellow bg-ink px-0.5">L</span>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="font-mono-alt text-xs tracking-widest uppercase text-ink-mid hover:text-ink transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Desktop CTA */}
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-xs font-mono-alt tracking-widest uppercase border-2 border-ink text-ink bg-transparent hover:bg-ink hover:text-cream transition-colors shadow-brutal"
           >
             Contact
-          </a>
+          </Link>
 
           {/* Mobile hamburger */}
           <button
@@ -104,22 +105,22 @@ export function SiteHeader() {
           >
             <nav className="flex flex-col border-t-2 border-ink">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={closeMobile}
                   className="px-6 py-5 font-display font-bold text-2xl text-ink border-b-2 border-ink/20 hover:bg-yellow transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 onClick={closeMobile}
                 className="px-6 py-5 font-display font-bold text-2xl text-ink border-b-2 border-ink/20 hover:bg-yellow transition-colors"
               >
                 Contact
-              </a>
+              </Link>
             </nav>
             <div className="px-6 pt-8">
               <a
