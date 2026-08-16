@@ -1,24 +1,12 @@
 'use client'
-import { useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { meta } from '@/lib/content'
-import { BrutalistButton } from '@/components/ui/BrutalistButton'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { MediaLink } from '@/components/ui/MediaLink'
+import { ContactForm } from '@/components/ContactForm'
 
 export function Contact() {
-  const [copied, setCopied] = useState(false)
   const shouldReduce = useReducedMotion()
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(meta.email)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2500)
-    } catch {
-      // Fallback: open mail client
-      window.location.href = `mailto:${meta.email}`
-    }
-  }
 
   return (
     <section id="contact" className="bg-ink border-t-2 border-ink">
@@ -40,86 +28,16 @@ export function Contact() {
             I&rsquo;m open to conversations about ambitious AI, data and SaaS products: building, advising, or for speaking appointments.
           </p>
 
-          {/* Email display */}
-          <div className="mb-10">
-            <p className="font-mono-alt text-xs tracking-widest uppercase text-cream/40 mb-3">
-              Email
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <a
-                href={`mailto:${meta.email}`}
-                className="font-display font-bold text-2xl md:text-3xl text-yellow hover:text-yellow/80 transition-colors"
-              >
-                {meta.email}
-              </a>
-              <button
-                onClick={handleCopy}
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono-alt tracking-widest uppercase border-2 border-cream/40 text-cream/60 hover:border-yellow hover:text-yellow transition-colors"
-                aria-label={copied ? 'Email address copied' : 'Copy email address'}
-              >
-                {copied ? (
-                  <>
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                      <path d="M1 6L4.5 9.5L11 2.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    Copied
-                  </>
-                ) : (
-                  <>
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                      <rect x="4" y="4" width="7" height="7" rx="0" stroke="currentColor" strokeWidth="1.5"/>
-                      <path d="M8 4V2H1V9H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    Copy
-                  </>
-                )}
-              </button>
-            </div>
-          </div>
+          <ContactForm />
 
-          {/* Actions */}
-          <div className="flex flex-wrap gap-4">
-            <BrutalistButton
-              href={`mailto:${meta.email}`}
-              variant="yellow"
-              size="lg"
-            >
-              Send an email
-            </BrutalistButton>
-
+          <div className="flex flex-wrap gap-x-6 gap-y-2 mt-10">
             {meta.cvPath && (
-              <BrutalistButton
-                href={meta.cvPath}
-                variant="outline"
-                size="lg"
-                external
-                className="!border-cream/40 !text-cream hover:!bg-cream hover:!text-ink"
-              >
-                Download CV
-              </BrutalistButton>
+              <MediaLink label="Download CV" href={meta.cvPath} light />
             )}
-
             {meta.bookingLink && (
-              <BrutalistButton
-                href={meta.bookingLink}
-                variant="outline"
-                size="lg"
-                external
-                className="!border-cream/40 !text-cream hover:!bg-cream hover:!text-ink"
-              >
-                Book a call
-              </BrutalistButton>
+              <MediaLink label="Book a call" href={meta.bookingLink} light />
             )}
-
-            <BrutalistButton
-              href={meta.githubUrl}
-              variant="outline"
-              size="lg"
-              external
-              className="!border-cream/40 !text-cream hover:!bg-cream hover:!text-ink"
-            >
-              GitHub
-            </BrutalistButton>
+            <MediaLink label="GitHub" href={meta.githubUrl} light />
           </div>
         </motion.div>
       </div>

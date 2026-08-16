@@ -73,7 +73,6 @@ const structuredData = {
   '@type': 'Person',
   name: 'Alfie Lambert',
   url: 'https://alfielambert.com',
-  email: 'alfielambert@zoho.com',
   jobTitle: 'Founder and Product-Growth Leader',
   description:
     'Founder and product-growth leader with more than 12 years of experience building AI, data and SaaS products.',

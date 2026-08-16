@@ -30,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
+      url: 'https://alfielambert.com/privacy',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
       url: 'https://alfielambert.com/writing',
       lastModified: posts[0] ? new Date(posts[0].updated) : new Date(),
       changeFrequency: 'weekly',

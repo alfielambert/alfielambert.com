@@ -1,7 +1,7 @@
 'use client'
 import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
-import { hero, meta } from '@/lib/content'
+import { hero } from '@/lib/content'
 import { BrutalistButton } from '@/components/ui/BrutalistButton'
 
 export function Hero() {
@@ -59,7 +59,7 @@ export function Hero() {
                   <path d="M8 3L8 13M8 13L3 8M8 13L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </BrutalistButton>
-              <BrutalistButton href={`mailto:${meta.email}`} variant="outline" size="lg">
+              <BrutalistButton href="/#contact" variant="outline" size="lg">
                 Get in touch
               </BrutalistButton>
             </motion.div>

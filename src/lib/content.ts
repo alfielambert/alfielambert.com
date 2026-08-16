@@ -5,7 +5,6 @@ export const author = {
 }
 
 export const meta = {
-  email: 'alfielambert@zoho.com',
   githubUrl: 'https://github.com/alfielambert',
   // TODO: Add booking link when available
   bookingLink: null as string | null,

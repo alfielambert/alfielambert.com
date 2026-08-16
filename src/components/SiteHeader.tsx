@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { meta } from '@/lib/content'
 
 const navLinks = [
   { label: 'Work', href: '/#work' },
@@ -123,14 +122,6 @@ export function SiteHeader() {
                 Contact
               </Link>
             </nav>
-            <div className="px-6 pt-8">
-              <a
-                href={`mailto:${meta.email}`}
-                className="font-mono-alt text-sm text-warm-gray"
-              >
-                {meta.email}
-              </a>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>

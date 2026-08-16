@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
-import { meta } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Support | Page Metadata Inspector',
@@ -81,14 +80,14 @@ export default function SupportPage() {
               Report a bug
             </h2>
             <p className="text-ink-mid leading-relaxed max-w-2xl mb-2">
-              Email{' '}
-              <a
-                href={`mailto:${meta.email}?subject=${encodeURIComponent('Page Metadata Inspector — bug report')}`}
+              Use the{' '}
+              <Link
+                href="/#contact"
                 className="font-display font-bold text-ink border-b-2 border-ink/25 hover:border-ink transition-colors"
               >
-                {meta.email}
-              </a>{' '}
-              with what you saw, the page URL you were checking, and your Chrome version if you can.
+                contact form
+              </Link>{' '}
+              on alfielambert.com, with what you saw, the page URL you were checking, and your Chrome version if you can.
             </p>
 
             <p className="font-mono-alt text-xs text-warm-gray mt-14">

@@ -17,15 +17,20 @@ interface MediaLinkProps {
   label: string
   href: string
   external?: boolean
+  light?: boolean
 }
 
-export function MediaLink({ label, href, external = true }: MediaLinkProps) {
+export function MediaLink({ label, href, external = true, light = false }: MediaLinkProps) {
+  const colorClass = light
+    ? 'text-cream border-cream/30 hover:border-cream focus-visible:border-cream'
+    : 'text-ink border-ink/25 hover:border-ink focus-visible:border-ink'
+
   return (
     <a
       href={href}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
-      className="group inline-flex items-center gap-1.5 py-2 font-mono-alt text-xs tracking-widest uppercase text-ink border-b-2 border-ink/25 hover:border-ink focus-visible:border-ink transition-colors w-fit"
+      className={`group inline-flex items-center gap-1.5 py-2 font-mono-alt text-xs tracking-widest uppercase border-b-2 transition-colors w-fit ${colorClass}`}
     >
       {label}
       <ArrowUpRight />
