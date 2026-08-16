@@ -1,97 +1,253 @@
 ---
 title: "Why job postings are underrated market intelligence"
-description: "What hiring data can tell you about where companies are actually investing — used here as a demo article to QA every element of the writing system."
-date: "2026-08-14"
-updated: "2026-08-14"
+description: "Job postings can reveal where companies are hiring, investing and building capability. Here's how I use hiring data as a practical GTM signal."
+standfirst: "Hiring data won't tell you exactly what a company is doing. Looked at over time, though, it can show where teams, budgets and technical priorities are moving."
+date: "2026-08-16"
+updated: "2026-08-16"
 topics:
   - GTM
   - Data
-image: "/og-image.jpg"
-draft: true
+  - Market Intelligence
+image: "/assets/job-postings-market-intelligence-og.png"
+draft: false
 ---
 
-<Callout label="Demo article">
-This article exists to visually QA the writing system — every heading level, list type, table, code block, callout, image and link it supports. The opening paragraph below is written in the voice a real post would use, but the specific figures throughout are illustrative, not researched claims. Delete this file once the design is approved.
-</Callout>
+Job postings are one of my favourite sources of market intelligence because they have some cost attached to them.
 
-Job postings are one of the cleanest ways to see where a company is actually investing. Strategy pages tell you what a company wants the market to believe. Hiring tells you which capabilities it's prepared to spend money building.
+A company can add AI to a strategy page in an afternoon. Hiring an AI engineer, a governance lead or a new data team requires budget, management time and some degree of internal commitment.
 
-That distinction matters more than it sounds. A company can put "AI-first" on its homepage for the cost of an afternoon. Opening five machine learning requisitions is a materially different signal — it shows up in budget, in headcount planning, and usually months before the resulting product ever gets announced.
+That doesn't make every vacancy meaningful. Plenty of job ads are replacements, speculative hires, stale listings or roles that never get filled.
 
-## Reading hiring data as a signal
+But viewed as a dataset rather than as individual vacancies, hiring starts to tell you something useful about where companies are putting people and money.
 
-Most market research leans on things companies say publicly: press releases, product launches, conference talks. All of that is true, but all of it is also curated. Job postings are closer to a company's internal reality, for a simple reason: nobody writes a requisition to impress a journalist.
+That makes it particularly interesting for GTM.
 
-That makes hiring data useful for a few different questions:
+## Job postings capture behaviour, not just messaging
 
-- Which sectors are increasing investment in a given capability
-- Which specific technologies are appearing more often in job descriptions
-- Where a company is quietly building a team around something it hasn't announced
-- Where hiring demand is slowing, which is often a leading indicator before it shows up anywhere else
+Most market research starts with what companies say.
 
-### A worked example
+You read press releases, earnings calls, strategy pages, founder interviews, product announcements and industry reports. I use all of those too.
 
-Take a hypothetical mid-size SaaS company. Its public messaging is steady quarter over quarter — nothing in the changelog suggests a shift in direction. But its job board tells a different story: three postings for "LLM evaluation," two for "applied ML," and a new "AI platform" team appearing in a senior hire's title.
+The problem is that they're communications.
 
-None of that is proof of a specific product. It is, however, a much stronger prior than anything on the company's homepage.
+Companies choose what to announce and how to frame it. A technology might appear prominently in company messaging because it is genuinely central to the plan, because customers want to hear about it, because investors do, or because everyone else in the category is talking about it.
 
-In an illustrative dataset like this, you'd typically walk the analysis in this order:
+Hiring has a different constraint.
 
-1. Pull postings for the sector or company list you care about
-2. Classify each posting against a fixed set of capability keywords
-3. Aggregate by month to see the trend, not just a snapshot
-4. Cross-reference against headcount or funding data, if available
-5. Treat the result as a prior to investigate, not a conclusion to publish
+Someone normally has to decide that a role is worth creating or replacing. There is a salary attached to it, people have to interview for it and, if the process works, somebody has to manage the person who arrives.
 
-<InBrief>
-- Job postings reflect budget and headcount decisions, not messaging
-- They move earlier than press coverage, product launches or investor updates
-- Structured well, they turn into a repeatable market-intelligence signal rather than a one-off research exercise
-</InBrief>
+Researchers have found evidence that this contains useful information. A [2020 *Management Science* study](https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3450) looked at company job postings and found that changes in posting volume were positively associated with changes in future performance. The relationship was stronger where the hiring appeared more likely to represent growth rather than replacement.
 
-## Why this is harder than it sounds
+The researchers described online vacancies as company disclosures happening outside the normal investor-relations channel.
 
-The obvious objection: a single job posting is noisy. A company might be backfilling, over-hiring speculatively, or using inflated titles for recruiting purposes. All fair. The signal isn't in any one posting — it's in the trend across many, filtered against a consistent taxonomy.
+I like that framing.
 
-> A company can say a capability is a priority. Opening five roles for it, and keeping them open, is a much harder signal to fake.
+A job description can reveal a surprising amount about a business without being written for that purpose.
 
-That's really the whole argument. Individual data points are weak. Structured, aggregated and tracked over time, they become one of the more honest signals available about what a company is actually doing.
+What does the team need?
 
-Here's a simplified illustration of what a monthly rollup might look like:
+What technology is it using?
 
-| Month | ML-related postings | Sector average | Signal |
-|---|---|---|---|
-| Jan | 3 | 1.2 | Above average |
-| Feb | 4 | 1.4 | Above average |
-| Mar | 2 | 1.1 | Above average |
-| Apr | 1 | 1.3 | In line |
+How senior is the hire?
 
-Small tables like this are easy to skim and easy to keep updating without redesigning anything.
+Where does the role sit in the organisation?
 
-## A minimal classification pass
+Is one person being hired, or is an entire function appearing?
 
-For technical readers, a first-pass classifier is usually just keyword matching against a controlled vocabulary before anything more sophisticated is worth building:
+Has the vocabulary in these roles changed over six months?
 
-```python
-KEYWORDS = ["machine learning", "llm", "applied ai", "ml engineer"]
+Those become market-intelligence questions once you stop looking at vacancies one at a time.
 
-def classify(posting_text: str) -> bool:
-    text = posting_text.lower()
-    return any(keyword in text for keyword in KEYWORDS)
-```
+## The pattern matters more than the individual vacancy
 
-That's deliberately unglamorous. Most of the value in this kind of analysis comes from consistent classification and a clean pipeline, not from a clever model on day one.
+If one bank advertises for an AI governance lead, I wouldn't conclude very much.
 
-<Figure
-  src="/og-image.jpg"
-  alt="Placeholder chart used to demonstrate figure and figcaption styling in the writing system"
-  caption="Placeholder image — demonstrates the figure/figcaption treatment, border framing and caption styling used for real charts and screenshots."
-/>
+Maybe someone left.
 
-## Where this fits alongside other signals
+Maybe the position has existed for years under another title.
 
-Hiring data isn't a replacement for talking to customers, reading filings or tracking product changes directly. It's a complement — evidence that's cheap to collect, updates continuously, and tends to move before a company's public narrative catches up with what it's actually doing.
+Maybe the role never gets filled.
 
-For more on the kind of systems this connects to, see the [hiring signal intelligence](/#building) project, or read more about [Schema.org's JobPosting type](https://schema.org/JobPosting) if you want the formal structure most job boards already publish against.
+But suppose 20 financial-services companies begin advertising AI governance roles over two quarters, while mentions of particular governance frameworks start appearing in the descriptions and the seniority of those positions increases.
 
-The rest is mostly discipline: a consistent taxonomy, a repeatable pipeline, and treating any single data point as a prior rather than a conclusion.
+Now there is something to investigate.
+
+The same reasoning works at company level.
+
+One new machine-learning vacancy is weak evidence. A company that previously had no obvious ML function opening roles for a head of AI, three engineers and an AI product manager is giving you a much richer signal.
+
+And time makes it better.
+
+Are postings in that area increasing?
+
+Are they becoming more senior?
+
+Are new technologies appearing in the requirements?
+
+Are similar companies doing the same thing?
+
+Are positions concentrated in one department, or spreading into product, operations, finance and marketing?
+
+This is where job data gets much more useful than checking whether a company currently has a vacancy containing a keyword.
+
+You're measuring movement.
+
+## AI hiring is a useful example
+
+AI is an obvious case because company messaging around it is so noisy.
+
+Almost every large business has something to say about AI. That makes the statement "this company is interested in AI" close to useless as market intelligence.
+
+Hiring gives you another dimension.
+
+[Indeed's hiring data](https://www.hiringlab.org/2026/01/22/january-labor-market-update-jobs-mentioning-ai-are-growing-amid-broader-hiring-weakness/) has shown AI-related terms continuing to appear more frequently in job postings even during a relatively weak wider hiring market.
+
+That doesn't prove every company mentioning AI is making a huge investment in it. It does let you ask better questions.
+
+Which occupations are seeing the increase?
+
+Which sectors?
+
+Which companies?
+
+Are employers asking for general familiarity with AI tools, or recruiting people to build specific systems?
+
+Are they hiring engineers, product managers, governance specialists or people expected to use AI inside an existing non-technical role?
+
+That difference matters commercially.
+
+"Companies care about AI" tells me very little.
+
+"Companies in this sector have started creating this particular type of role, using these technologies, at this level of seniority" is much closer to something I can use.
+
+## I built a system to look at job postings this way
+
+Manually browsing vacancies is a bad way to answer these questions, so I [built a system to turn job postings into structured market data](/#hiring-signal-intelligence).
+
+The broad flow is simple:
+
+`job data → theme matching → classification → aggregation → market signal`
+
+I can define a topic or set of technologies I'm interested in, analyse relevant LinkedIn job postings, classify them consistently and look at how the results change over time.
+
+Some parts are deterministic. Some benefit from LLM classification. The useful bit is having a stable enough taxonomy and process that a change in the output means something.
+
+That lets me move from:
+
+> Here is a company advertising an AI role.
+
+to questions such as:
+
+> Is this sector hiring more people into AI-related functions than it was six months ago?
+
+> Which types of companies are doing it?
+
+> What are they actually asking those people to know?
+
+> Which capabilities seem to be moving from experimentation into dedicated teams?
+
+That's a much more useful dataset.
+
+The technical implementation is less interesting to me than what it makes possible. The aim is to turn public hiring activity into another input for commercial decisions.
+
+## Where hiring signals become useful for GTM
+
+The first use is deciding where to look.
+
+If I sell into companies building a particular capability, I'd rather know which companies appear to be investing in that capability than start with a static list of companies that merely fit my ICP.
+
+Hiring can help qualify that list.
+
+Imagine two otherwise similar companies.
+
+One has published three articles about AI but has no obvious hiring around it.
+
+The other has barely discussed AI publicly but is recruiting a product lead, two engineers and an operations role whose description mentions deploying AI systems internally.
+
+Which one would I investigate first?
+
+I'd pick the second.
+
+That doesn't mean firing off an automated email saying, "I saw you're hiring AI engineers".
+
+It means there is evidence of a live organisational change. I can research the account properly and understand what that change might imply.
+
+The same data can help with market selection. If several sectors fit the product theoretically, hiring patterns provide another way to see where capability is actually being built.
+
+It can inform competitive research too. Hiring is one of the public places where companies have to reveal some of what they need before the finished product appears.
+
+And at a broader level, new clusters of job titles can be evidence that a category is becoming real.
+
+None of these signals is enough on its own. They make the next piece of research more informed.
+
+## Job postings are messy data
+
+There's a temptation with this kind of system to make the signal sound cleaner than it is.
+
+It isn't.
+
+A vacancy can be replacement hiring. The same position can be reposted. A company might [advertise continuously for people it would hire only if the right candidate appeared](https://www.stlouisfed.org/on-the-economy/2025/nov/beveridge-curves-why-job-vacancy-types-matter-monetary-policy). Some vacancies remain online after the hiring decision has changed. Job boards differ in coverage, and companies don't all recruit in the same way.
+
+The title can be misleading too.
+
+An "AI Product Manager" at one company might be doing work that another company gives to an ordinary product manager. Taxonomies shift as new terminology becomes fashionable.
+
+This is why I wouldn't treat an isolated job posting as intent data in the same sense as somebody actively requesting a product demo.
+
+It is evidence with uncertainty attached.
+
+The useful work is reducing that uncertainty.
+
+Repeated postings matter more than one posting.
+
+Changes over time matter more than a snapshot.
+
+A cluster across comparable companies matters more than an isolated company.
+
+The contents of the description matter more than the title alone.
+
+And hiring data becomes stronger when combined with other evidence: product changes, funding, company announcements, technical documentation, leadership hires, employee movement and what the company is saying publicly.
+
+The system should help you decide what deserves attention, not pretend it already knows the answer.
+
+## A better way to think about intent data
+
+A lot of [B2B intent data](/#intent-based-prospecting) is really audience filtering with a stronger name.
+
+Company X fits the right industry, has enough employees and somebody there visited a particular page.
+
+That can be useful. But the signals I find more interesting are the ones tied to behaviour that requires some commitment.
+
+Hiring is one of those behaviours.
+
+The company has taken an internal need and translated it into a request for a person.
+
+That still leaves plenty of ambiguity, but there's something concrete to analyse.
+
+For GTM, I think the most useful result is a better prior.
+
+Instead of asking:
+
+> Which companies in this industry might care about this?
+
+you can start asking:
+
+> Which companies are showing evidence that they're currently building capability around this?
+
+Then you investigate.
+
+That is a much better starting point for account research, market selection and outreach than assuming every company matching the same firmographic filters has the same priorities.
+
+## Use job data to decide where to look next
+
+I wouldn't build a market thesis from job postings alone.
+
+I also wouldn't ignore them.
+
+A vacancy is one small piece of public evidence about what is happening inside a company. Thousands of vacancies, classified consistently and measured over time, become something else.
+
+They show where teams are being formed, which skills are becoming more common and where businesses appear willing to commit headcount.
+
+That doesn't tell you the strategy.
+
+It gives you a better place to start looking for it.

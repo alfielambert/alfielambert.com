@@ -78,7 +78,7 @@ export default function WritingIndexPage() {
                               {post.title}
                             </h2>
                             <p className="text-ink-mid leading-relaxed mb-3 max-w-xl">
-                              {post.description}
+                              {post.standfirst}
                             </p>
                             <p className="font-mono-alt text-xs tracking-widest uppercase text-warm-gray">
                               {post.topics.join(' · ')}

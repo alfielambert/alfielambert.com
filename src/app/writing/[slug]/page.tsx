@@ -112,7 +112,7 @@ export default async function ArticlePage({ params }: PageProps) {
                 {post.title}
               </h1>
               <p className="text-ink-mid text-xl leading-relaxed mb-8 max-w-[640px]">
-                {post.description}
+                {post.standfirst}
               </p>
               <p className="font-mono-alt text-xs tracking-widest uppercase text-warm-gray">
                 {author.name} &middot;{' '}

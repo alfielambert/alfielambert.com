@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#F5F0E6"/>
+<rect x="20" y="20" width="1160" height="590" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+<text x="56" y="76" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" letter-spacing="3" fill="#8A8070">WRITING</text>
+<rect x="56" y="118" width="130" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="196" y="118" width="80" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="286" y="118" width="46" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="32" y="166" width="10" height="10" fill="#E5FF2D" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="56" y="166" width="150" height="14" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="216" y="166" width="93" height="14" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="319" y="166" width="46" height="14" fill="#E5FF2D" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="56" y="214" width="170" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="236" y="214" width="105" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="351" y="214" width="46" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="56" y="262" width="110" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="176" y="262" width="68" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="254" y="262" width="46" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="32" y="310" width="10" height="10" fill="#E5FF2D" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="56" y="310" width="140" height="14" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="206" y="310" width="86" height="14" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="302" y="310" width="46" height="14" fill="#E5FF2D" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="56" y="358" width="160" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="226" y="358" width="99" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="335" y="358" width="46" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="56" y="406" width="130" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="196" y="406" width="80" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="286" y="406" width="46" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="32" y="454" width="10" height="10" fill="#E5FF2D" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="56" y="454" width="150" height="14" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="216" y="454" width="93" height="14" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="319" y="454" width="46" height="14" fill="#E5FF2D" stroke="#1A1A1A" stroke-width="1.5"/>
+<rect x="56" y="502" width="170" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="236" y="502" width="105" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<rect x="351" y="502" width="46" height="14" fill="#EBE4D3" stroke="#C8C0B0" stroke-width="1"/>
+<text x="56" y="564" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="1" fill="#8A8070">JOB POSTINGS, CLASSIFIED AND AGGREGATED</text>
+<rect x="707" y="147" width="400" height="64" fill="#1A1A1A"/>
+<rect x="707" y="285" width="400" height="64" fill="#1A1A1A"/>
+<rect x="707" y="423" width="400" height="64" fill="#1A1A1A"/>
+<rect x="700" y="140" width="400" height="64" fill="#F5F0E6" stroke="#1A1A1A" stroke-width="2"/>
+<text x="900.0" y="179.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="23" font-weight="500" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">JOB POSTINGS</text>
+<line x1="900.0" y1="204" x2="900.0" y2="264" stroke="#1A1A1A" stroke-width="2.5"/>
+<polygon points="892.0,256 908.0,256 900.0,272" fill="#1A1A1A"/>
+<rect x="700" y="278" width="400" height="64" fill="#F5F0E6" stroke="#1A1A1A" stroke-width="2"/>
+<text x="900.0" y="317.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="23" font-weight="500" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">HIRING PATTERNS</text>
+<line x1="900.0" y1="342" x2="900.0" y2="402" stroke="#1A1A1A" stroke-width="2.5"/>
+<polygon points="892.0,394 908.0,394 900.0,410" fill="#1A1A1A"/>
+<rect x="700" y="416" width="400" height="64" fill="#E5FF2D" stroke="#1A1A1A" stroke-width="3"/>
+<text x="900.0" y="455.0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="23" font-weight="700" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">MARKET SIGNAL</text>
+<rect x="700" y="560" width="54.5" height="30" fill="none" stroke="#1A1A1A" stroke-width="1.5" opacity="0.7"/>
+<text x="727.25" y="580" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle" opacity="0.85">GTM</text>
+<rect x="768.5" y="560" width="64.0" height="30" fill="none" stroke="#1A1A1A" stroke-width="1.5" opacity="0.7"/>
+<text x="800.5" y="580" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle" opacity="0.85">DATA</text>
+<rect x="846.5" y="560" width="206.5" height="30" fill="none" stroke="#1A1A1A" stroke-width="1.5" opacity="0.7"/>
+<text x="949.75" y="580" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle" opacity="0.85">MARKET INTELLIGENCE</text>
+<text x="56" y="586" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.5" fill="#8A8070">ALFIELAMBERT.COM</text>
+</svg>

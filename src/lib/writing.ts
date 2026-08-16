@@ -7,6 +7,8 @@ const WRITING_DIR = path.join(process.cwd(), 'content/writing')
 export interface PostFrontmatter {
   title: string
   description: string
+  /** On-page dek shown under the H1. Falls back to `description` if omitted. */
+  standfirst?: string
   date: string
   updated?: string
   topics: string[]
@@ -20,7 +22,10 @@ export interface PostFrontmatter {
 export interface Post {
   slug: string
   title: string
+  /** Meta/OG/Twitter/JSON-LD description. */
   description: string
+  /** On-page dek shown under the H1 — may differ from `description`. */
+  standfirst: string
   date: string
   updated: string
   topics: string[]
@@ -60,6 +65,7 @@ function loadRawPosts(): Post[] {
       slug,
       title: fm.title,
       description: fm.description,
+      standfirst: fm.standfirst || fm.description,
       date: fm.date,
       updated: fm.updated || fm.date,
       topics: fm.topics || [],

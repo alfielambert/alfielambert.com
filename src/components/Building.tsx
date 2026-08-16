@@ -4,6 +4,10 @@ import { building, type BuildProject } from '@/lib/content'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { LabelChip } from '@/components/ui/LabelChip'
 
+function slugify(title: string) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
 function BuildVisual({ project }: { project: BuildProject }) {
   const { visual } = project
 
@@ -65,11 +69,12 @@ export function Building() {
           {building.projects.map((project, i) => (
             <motion.article
               key={project.title}
+              id={slugify(project.title)}
               initial={shouldReduce ? {} : { opacity: 0, y: 24 }}
               whileInView={shouldReduce ? {} : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
-              className="border-b-2 border-ink last:border-b-0 py-10 md:py-12"
+              className="border-b-2 border-ink last:border-b-0 py-10 md:py-12 scroll-mt-24"
             >
               <div className="flex items-start gap-4 mb-4">
                 <span className="font-mono-alt text-xs text-warm-gray tabular-nums mt-2">
