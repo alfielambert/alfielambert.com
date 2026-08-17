@@ -17,6 +17,13 @@
 /.next/
 /out/
 
+# opennext / cloudflare
+/.open-next/
+.wrangler/
+
+# generated at build time from content/writing/*.mdx
+/src/lib/generated/
+
 # production
 /build
 

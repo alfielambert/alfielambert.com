@@ -1,8 +1,5 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-
-const WRITING_DIR = path.join(process.cwd(), 'content/writing')
+import type { ComponentType } from 'react'
+import { generatedWritingPosts } from './generated/writing-content.generated'
 
 export interface PostFrontmatter {
   title: string
@@ -35,6 +32,8 @@ export interface Post {
   author: string
   content: string
   readingTime: number
+  /** Compiled at build time from the post's MDX body — see scripts/generate-writing-content.mjs. */
+  MDXContent: ComponentType<{ components?: Record<string, unknown> }>
 }
 
 const DEFAULT_SOCIAL_IMAGE = '/og-image.jpg'
@@ -49,20 +48,11 @@ function readingTimeMinutes(content: string): number {
 }
 
 function loadRawPosts(): Post[] {
-  if (!fs.existsSync(WRITING_DIR)) return []
-
-  const files = fs.readdirSync(WRITING_DIR).filter((f) => f.endsWith('.mdx'))
-
-  return files.map((filename) => {
-    const filePath = path.join(WRITING_DIR, filename)
-    const raw = fs.readFileSync(filePath, 'utf-8')
-    const { data, content } = matter(raw)
-    const fm = data as PostFrontmatter
-
-    const slug = fm.slug || filename.replace(/\.mdx$/, '')
+  return generatedWritingPosts.map(({ slug, frontmatter, content, MDXContent }) => {
+    const fm = frontmatter as unknown as PostFrontmatter
 
     return {
-      slug,
+      slug: fm.slug || slug,
       title: fm.title,
       description: fm.description,
       standfirst: fm.standfirst || fm.description,
@@ -75,6 +65,7 @@ function loadRawPosts(): Post[] {
       author: fm.author || 'Alfie Lambert',
       content,
       readingTime: readingTimeMinutes(content),
+      MDXContent,
     }
   })
 }

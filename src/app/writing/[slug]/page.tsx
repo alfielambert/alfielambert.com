@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import remarkGfm from 'remark-gfm'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
 import { AuthorBlock } from '@/components/writing/AuthorBlock'
@@ -130,11 +128,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <hr className="max-w-[760px] mx-auto border-ink mb-14" />
 
             <div className="max-w-[760px] mx-auto">
-              <MDXRemote
-                source={post.content}
-                components={mdxComponents}
-                options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
-              />
+              <post.MDXContent components={mdxComponents} />
 
               <AuthorBlock />
               <RelatedWriting posts={related} />
