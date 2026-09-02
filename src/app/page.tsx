@@ -1,11 +1,13 @@
 import { SiteHeader } from '@/components/SiteHeader'
 import { Hero } from '@/components/Hero'
+import { SignatureThesis } from '@/components/SignatureThesis'
 import { SelectedWork } from '@/components/SelectedWork'
-import { Building } from '@/components/Building'
+import { Systems } from '@/components/Systems'
+import { LatestWriting } from '@/components/LatestWriting'
 import { WhatIDo } from '@/components/WhatIDo'
-import { About } from '@/components/About'
 import { Speaking } from '@/components/Speaking'
 import { Experience } from '@/components/Experience'
+import { About } from '@/components/About'
 import { Contact } from '@/components/Contact'
 import { SiteFooter } from '@/components/SiteFooter'
 
@@ -15,12 +17,14 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
+        <SignatureThesis />
         <SelectedWork />
-        <Building />
+        <Systems />
+        <LatestWriting />
         <WhatIDo />
-        <About />
         <Speaking />
         <Experience />
+        <About />
         <Contact />
       </main>
       <SiteFooter />

@@ -4,13 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
 const navLinks = [
-  { label: 'Work', href: '/#work' },
-  { label: 'Building', href: '/#building' },
-  { label: 'What I do', href: '/#what-i-do' },
-  { label: 'About', href: '/#about' },
-  { label: 'Speaking', href: '/#speaking' },
-  { label: 'Experience', href: '/#experience' },
   { label: 'Writing', href: '/writing' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Systems', href: '/#systems' },
+  { label: 'Speaking', href: '/#speaking' },
+  { label: 'About', href: '/#about' },
 ]
 
 export function SiteHeader() {

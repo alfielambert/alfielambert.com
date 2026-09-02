@@ -18,9 +18,11 @@ interface MediaLinkProps {
   href: string
   external?: boolean
   light?: boolean
+  /** Optional leading icon, e.g. a brand mark. Kept separate from the label/arrow spacing below. */
+  icon?: React.ReactNode
 }
 
-export function MediaLink({ label, href, external = true, light = false }: MediaLinkProps) {
+export function MediaLink({ label, href, external = true, light = false, icon }: MediaLinkProps) {
   const colorClass = light
     ? 'text-cream border-cream/30 hover:border-cream focus-visible:border-cream'
     : 'text-ink border-ink/25 hover:border-ink focus-visible:border-ink'
@@ -30,10 +32,13 @@ export function MediaLink({ label, href, external = true, light = false }: Media
       href={href}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
-      className={`group inline-flex items-center gap-1.5 py-2 font-mono-alt text-xs tracking-widest uppercase border-b-2 transition-colors w-fit ${colorClass}`}
+      className={`group inline-flex items-center gap-2 py-2 font-mono-alt text-xs tracking-widest uppercase border-b-2 transition-colors w-fit ${colorClass}`}
     >
-      {label}
-      <ArrowUpRight />
+      {icon}
+      <span className="inline-flex items-center gap-1.5">
+        {label}
+        <ArrowUpRight />
+      </span>
     </a>
   )
 }

@@ -2,72 +2,73 @@
 
 My personal website: [alfielambert.com](https://alfielambert.com)
 
-I’m a founder and product/GTM operator working across AI, data and SaaS. Cofounder @ Oiya (https:www.oiya.ai) A growing part of my work involves building the tools, agents and internal systems I need myself, using AI-assisted development alongside APIs, automation and custom code.
-
-This site is one example of that way of working.
-
-## About the site
-
-I built `alfielambert.com` as a home for my work, experience and projects outside LinkedIn.
-
-It covers:
-
-* Products and companies I’ve helped build and take to market
-* Product strategy and positioning
-* Go-to-market work
-* Early-stage company building
-* AI-assisted product development
-* Internal GTM tools and systems I’ve built
-* Speaking, podcasts and media
-
-The site is designed to be a useful professional record rather than a traditional online CV.
-
-## Building with AI
-
-I’m not a software engineer by training.
-
-My background is in product, growth, GTM and company building, but AI-assisted development has allowed me to work much further down the stack.
-
-That means I can increasingly move through:
-
-**idea → data → logic → working tool → GTM outcome**
-
-without immediately handing the problem to an engineering team.
-
-I use that capability to build things such as:
-
-* AI visibility and recommendation analysis tools
-* Intent-based prospecting systems
-* Market intelligence from hiring and company data
-* Lead research and enrichment workflows
-* LLM-powered classification and research agents
-* GTM automations connecting APIs, data and internal systems
-
-The goal isn’t to automate everything. It’s to build the capability needed to solve a commercial problem when the right off-the-shelf product doesn’t exist.
+I'm an AI transformation, product and GTM leader with 12+ years building technology companies (Lix, BizCrunch, Oiya). The site is a professional home outside LinkedIn: selected work, the AI systems I build hands-on, writing, speaking and a way to get in touch.
 
 ## Stack
 
-The site currently uses:
+- **Next.js** (App Router) + **TypeScript** + **React**
+- **Tailwind CSS v4** (theme tokens in `src/app/globals.css`)
+- **Framer Motion** for section-level animation
+- MDX-based writing system (`@mdx-js/mdx`, `gray-matter`, `remark-gfm`)
+- Deployed on **Cloudflare Workers** via `@opennextjs/cloudflare`
 
-* **Next.js**
-* **TypeScript**
-* **React**
-* **Git / GitHub**
-* **Cloudflare Workers**
+## Local development
 
-Development is AI-assisted, primarily using Claude alongside the usual development and debugging workflow.
+```bash
+npm install
+npm run dev
+```
 
-## Deployment
+This runs a content-generation step first (see below), then starts `next dev`.
 
-The production site is hosted on Cloudflare Workers.
+## Project structure
 
-Changes pushed to the main GitHub branch trigger an automated build and deployment through Cloudflare.
+```
+src/app/                  App Router routes (page.tsx, layout.tsx, writing/, privacy/, page-metadata-inspector/)
+src/components/           Homepage sections and shared UI (src/components/ui/)
+src/components/writing/   MDX renderers and article furniture (callouts, figures, related posts)
+src/lib/content.ts        All homepage copy: hero, projects, systems, capabilities, timeline, speaking
+src/lib/writing.ts        Reads generated writing content, computes reading time, related posts
+content/writing/*.mdx     Article source files
+scripts/generate-writing-content.mjs   Compiles MDX into a build-time module (see below)
+```
 
+## Where homepage content lives
+
+Almost all homepage copy (the hero, selected work, hands-on systems, capabilities, timeline, speaking items) is centralised in `src/lib/content.ts`. Components under `src/components/` are mostly presentation; edit content there rather than in JSX where possible.
+
+## How writing is published
+
+1. Add an `.mdx` file to `content/writing/` with frontmatter (`title`, `description`, `date`, `topics`, `draft`, etc; see `src/lib/writing.ts` for the full shape).
+2. `scripts/generate-writing-content.mjs` compiles every article's MDX body into a plain JS module at build time (`src/lib/generated/`). This exists because Cloudflare Workers have no filesystem at runtime and disallow the `new Function` calls that `next-mdx-remote`'s runtime MDX evaluator relies on, so compiling ahead of time avoids both problems.
+3. Set `draft: false` to publish. Draft posts are excluded from `getAllPosts()`, the sitemap, RSS and the homepage "Latest writing" section, and 404 in production.
+4. Commit and push. The sitemap (`src/app/sitemap.ts`), RSS (`src/app/feed.xml/route.ts`) and homepage update automatically for published content.
+
+There is no CMS. Don't add one for this.
+
+## Validation commands
+
+```bash
+npm run lint          # ESLint
+npx tsc --noEmit       # TypeScript, no build output
+npm run build          # Full production build (also runs the content-generation step)
+```
+
+## Deployment notes
+
+Production is a Cloudflare Worker built with `@opennextjs/cloudflare`. Pushes to `main` trigger an automated Cloudflare build and deploy.
+
+For a manual deploy:
+
+```bash
+npm run deploy   # opennextjs-cloudflare build && opennextjs-cloudflare deploy
+npm run preview  # build + local Cloudflare Worker preview
+```
+
+`wrangler.jsonc` and `open-next.config.ts` hold the Worker/asset bindings. The site has no ISR or revalidation (everything is static or `force-static`), so no incremental cache store is configured.
 
 ## Repository
 
-This repository is public partly because I want the work itself to be visible.
-
-I’m interested in the point where product thinking, GTM and software increasingly overlap: understanding a commercial problem well enough to define it, finding the right data, and being able to build a working system around it.
+This repository is public because I want the work itself to be visible: the point where product thinking, GTM and software increasingly overlap.
 
 More about my work at [alfielambert.com](https://alfielambert.com).

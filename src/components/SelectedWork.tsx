@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { projects, type AccentColor } from '@/lib/content'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { LabelChip } from '@/components/ui/LabelChip'
+import { MediaLink } from '@/components/ui/MediaLink'
 
 const accentBg: Record<AccentColor, string> = {
   yellow: 'bg-yellow',
@@ -18,10 +19,8 @@ const accentText: Record<AccentColor, string> = {
 
 function ProjectCard({
   project,
-  index,
 }: {
   project: (typeof projects)[0]
-  index: number
 }) {
   const shouldReduce = useReducedMotion()
 
@@ -97,6 +96,15 @@ function ProjectCard({
               <LabelChip key={tag}>{tag}</LabelChip>
             ))}
           </div>
+
+          {/* Evidence links */}
+          {project.links && project.links.length > 0 && (
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-6 pt-6 border-t border-ink/15">
+              {project.links.map((link) => (
+                <MediaLink key={link.href} label={link.label} href={link.href} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </motion.article>
@@ -107,15 +115,15 @@ export function SelectedWork() {
   return (
     <section id="work" className="border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-16 md:pt-20">
-        <SectionLabel number="02" label="Selected work" />
+        <SectionLabel number="03" label="Selected work" />
         <h2 className="font-display font-extrabold text-3xl md:text-4xl mt-6 mb-0 tracking-tight">
-          Companies I have built and grown
+          Selected AI and technology work
         </h2>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-10">
-        {projects.map((project, i) => (
-          <ProjectCard key={project.id} project={project} index={i} />
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </section>

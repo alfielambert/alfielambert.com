@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import { meta, personId } from '@/lib/content'
 
 const dejaVu = localFont({
   src: [
@@ -27,19 +28,21 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
+const TITLE = 'Alfie Lambert | AI Transformation, Product & GTM'
+const DESCRIPTION =
+  'Alfie Lambert helps organisations turn AI from experiments into working systems, across AI transformation, AI agents, workflow redesign, company knowledge, product strategy and company building.'
+
 export const metadata: Metadata = {
-  title: 'Alfie Lambert | Founder, Product and Growth',
-  description:
-    'Founder and product-growth operator building AI, data and SaaS products, GTM systems and internal tools.',
+  title: TITLE,
+  description: DESCRIPTION,
   metadataBase: new URL('https://alfielambert.com'),
   alternates: {
     canonical: '/',
     types: { 'application/rss+xml': 'https://alfielambert.com/feed.xml' },
   },
   openGraph: {
-    title: 'Alfie Lambert | Founder, Product and Growth',
-    description:
-      'Founder and product-growth operator building AI, data and SaaS products, GTM systems and internal tools.',
+    title: TITLE,
+    description: DESCRIPTION,
     url: 'https://alfielambert.com',
     siteName: 'Alfie Lambert',
     locale: 'en_GB',
@@ -49,19 +52,18 @@ export const metadata: Metadata = {
         url: 'https://alfielambert.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Alfie Lambert — Founder, Product and Growth',
+        alt: 'Alfie Lambert · AI Transformation, Product & GTM',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Alfie Lambert | Founder, Product and Growth',
-    description:
-      'Founder and product-growth operator building AI, data and SaaS products, GTM systems and internal tools.',
+    title: TITLE,
+    description: DESCRIPTION,
     images: [
       {
         url: 'https://alfielambert.com/og-image.jpg',
-        alt: 'Alfie Lambert — Founder, Product and Growth',
+        alt: 'Alfie Lambert · AI Transformation, Product & GTM',
       },
     ],
   },
@@ -71,23 +73,33 @@ export const metadata: Metadata = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': personId,
   name: 'Alfie Lambert',
   url: 'https://alfielambert.com',
-  jobTitle: 'Founder and Product-Growth Leader',
+  image: 'https://alfielambert.com/headshots/hero.jpg',
+  jobTitle: 'AI Transformation, Product and GTM Leader',
   description:
-    'Founder and product-growth leader with more than 12 years of experience building AI, data and SaaS products.',
+    'AI transformation, product and GTM leader with more than 12 years building technology companies, working across AI products, agents, company knowledge and workflow redesign.',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Oiya',
+    url: 'https://oiya.ai',
+  },
   alumniOf: {
     '@type': 'CollegeOrUniversity',
     name: 'University of Cambridge',
   },
+  sameAs: [meta.githubUrl, 'https://x.com/AlfieOiya'],
   knowsAbout: [
+    'AI Transformation',
+    'AI Agents',
+    'Agentic Systems',
+    'Workflow Design',
+    'Organisational Knowledge',
+    'AI Product Strategy',
     'Product Strategy',
     'Go-to-Market',
-    'AI Products',
-    'SaaS',
     'B2B Data',
-    'Fundraising',
-    'Product Marketing',
     'Early-stage Company Building',
   ],
 }
@@ -101,7 +113,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+          }}
         />
       </head>
       <body className="min-h-screen bg-cream text-ink antialiased">

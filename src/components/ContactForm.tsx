@@ -4,7 +4,13 @@ import { BrutalistButton } from '@/components/ui/BrutalistButton'
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xljrpejl'
 
-const ENQUIRY_TYPES = ['Building', 'Advising', 'Speaking', 'Something else']
+const ENQUIRY_TYPES = [
+  'AI transformation / advisory',
+  'Opportunities and collaborations',
+  'Speaking',
+  'Product or company building',
+  'Something else',
+]
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 

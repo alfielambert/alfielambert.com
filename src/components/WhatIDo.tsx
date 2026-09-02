@@ -9,7 +9,7 @@ export function WhatIDo() {
   return (
     <section id="what-i-do" className="bg-ink border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <SectionLabel number="04" label="What I do" light />
+        <SectionLabel number="06" label="What I work on" light />
 
         <h2 className="font-display font-extrabold text-3xl md:text-4xl mt-6 mb-14 tracking-tight text-cream">
           Where I operate

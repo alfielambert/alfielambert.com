@@ -24,7 +24,7 @@ export default function PrivacyPage() {
               Privacy Notice
             </h1>
             <p className="font-mono-alt text-xs text-warm-gray mb-14">
-              Last updated: 16 August 2026
+              Last updated: 2 September 2026
             </p>
 
             <div className="max-w-2xl space-y-12">
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
                   If you use the contact form, it submits:
                 </p>
                 <ul className="space-y-2">
-                  {['Your name', 'Your email address', 'The enquiry type you select (Building, Advising, Speaking or Something else)', 'The message you write'].map((item) => (
+                  {['Your name', 'Your email address', 'The enquiry type you select (AI transformation / advisory, Opportunities and collaborations, Speaking, Product or company building, or Something else)', 'The message you write'].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="mt-1.5 w-1.5 h-1.5 bg-yellow border border-ink flex-shrink-0" aria-hidden="true" />
                       <span className="text-ink-mid leading-relaxed">{item}</span>

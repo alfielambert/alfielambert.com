@@ -1,7 +1,7 @@
 'use client'
 import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
-import { speaking } from '@/lib/content'
+import { speaking, speakingTopics } from '@/lib/content'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { MediaLink } from '@/components/ui/MediaLink'
 
@@ -11,14 +11,31 @@ export function Speaking() {
   return (
     <section id="speaking" className="bg-cream-dark border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <SectionLabel number="06" label="Speaking and media" />
+        <SectionLabel number="07" label="Speaking and media" />
 
         <h2 className="font-display font-extrabold text-3xl md:text-4xl mt-6 mb-4 tracking-tight">
           On stage and on air
         </h2>
-        <p className="text-ink-mid max-w-xl mb-14">
-          I&rsquo;ve hosted a specialist podcast, been interviewed about companies I&rsquo;ve built and spoken on stage about startups, growth and acquisition. Comfortable acting as the public face of a technical company.
+        <p className="text-ink-mid max-w-xl mb-10">
+          I&rsquo;ve hosted a specialist podcast, been interviewed about companies I&rsquo;ve built and spoken from stage about startups and acquisition. I&rsquo;m comfortable moving between technical, commercial and executive audiences, and translating what&rsquo;s actually happening in AI and product work into language each of them can use.
         </p>
+
+        <div className="mb-14">
+          <p className="font-mono-alt text-xs tracking-widest uppercase text-warm-gray mb-4">
+            Speaking topics
+          </p>
+          <ul className="space-y-2">
+            {speakingTopics.map((topic) => (
+              <li key={topic} className="flex items-start gap-3 text-ink-mid">
+                <span
+                  className="mt-1.5 w-2 h-2 flex-shrink-0 border-2 border-ink bg-yellow"
+                  aria-hidden="true"
+                />
+                <span className="leading-relaxed">{topic}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-0">
           {speaking.map((item, i) => (

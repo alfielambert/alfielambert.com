@@ -6,7 +6,7 @@ import { AuthorBlock } from '@/components/writing/AuthorBlock'
 import { RelatedWriting } from '@/components/writing/RelatedWriting'
 import { mdxComponents } from '@/components/writing/mdx-components'
 import { getAllPosts, getPostBySlug, getPostNumber, getRelatedPosts } from '@/lib/writing'
-import { author } from '@/lib/content'
+import { author, personId } from '@/lib/content'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -84,10 +84,11 @@ export default async function ArticlePage({ params }: PageProps) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    author: { '@type': 'Person', name: author.name, url: 'https://alfielambert.com' },
+    author: { '@type': 'Person', '@id': personId, name: author.name },
     datePublished: post.date,
     dateModified: post.updated,
     image: imageUrl,
+    keywords: post.topics.join(', '),
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
   }
 
@@ -139,7 +140,7 @@ export default async function ArticlePage({ params }: PageProps) {
       <SiteFooter />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
     </>
   )

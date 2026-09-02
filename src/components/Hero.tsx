@@ -30,7 +30,7 @@ export function Hero() {
               {...fadeUp(0)}
               className="font-mono-alt text-xs tracking-widest uppercase text-warm-gray mb-6"
             >
-              Founder · Product · Growth
+              {hero.eyebrow}
             </motion.p>
 
             <motion.h1
@@ -54,13 +54,13 @@ export function Hero() {
 
             <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-4">
               <BrutalistButton href="#work" variant="filled" size="lg">
-                View my work
+                See my work
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M8 3L8 13M8 13L3 8M8 13L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </BrutalistButton>
-              <BrutalistButton href="/#contact" variant="outline" size="lg">
-                Get in touch
+              <BrutalistButton href="/writing" variant="outline" size="lg">
+                Read my writing
               </BrutalistButton>
             </motion.div>
           </div>
