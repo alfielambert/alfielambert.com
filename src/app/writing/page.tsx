@@ -6,11 +6,11 @@ import { getAllPosts } from '@/lib/writing'
 
 export const metadata: Metadata = {
   title: 'Writing | Alfie Lambert',
-  description: 'Notes on AI transformation, agents, workflow design, product and go-to-market.',
+  description: 'Notes on AI agents, data, product and go-to-market.',
   alternates: { canonical: '/writing' },
   openGraph: {
     title: 'Writing | Alfie Lambert',
-    description: 'Notes on AI transformation, agents, workflow design, product and go-to-market.',
+    description: 'Notes on AI agents, data, product and go-to-market.',
     url: 'https://alfielambert.com/writing',
     type: 'website',
   },
@@ -49,11 +49,11 @@ export default function WritingIndexPage() {
               Writing
             </p>
             <h1 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-6">
-              Notes on AI transformation, agents, workflow design, product and go-to-market.
+              Notes on AI agents, data, product and go-to-market.
             </h1>
 
             {posts.length === 0 && (
-              <p className="text-ink-mid max-w-xl">Nothing published yet — check back soon.</p>
+              <p className="text-ink-mid max-w-xl">Nothing published yet. Check back soon.</p>
             )}
 
             <div className="max-w-3xl mt-16">

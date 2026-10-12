@@ -76,14 +76,14 @@ export function Systems() {
   const shouldReduce = useReducedMotion()
 
   return (
-    <section id="systems" className="bg-cream-dark border-t-2 border-ink">
+    <section id="systems" className="border-t-0 border-ink scroll-mt-16">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-14">
           <div>
-            <SectionLabel number="04" label="Hands-on AI systems" />
+            <SectionLabel number="03" label="Hands-on" />
 
             <h2 className="font-display font-extrabold text-3xl md:text-4xl mt-6 mb-4 tracking-tight">
-              Systems I have designed and shipped
+              AI products and systems I&rsquo;ve shipped
             </h2>
             <p className="text-ink-mid max-w-xl">{systems.intro}</p>
           </div>

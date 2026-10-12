@@ -28,9 +28,9 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
-const TITLE = 'Alfie Lambert | AI Transformation, Product & GTM'
+const TITLE = 'Alfie Lambert | Co-founder of Oiya · AI, Product & GTM'
 const DESCRIPTION =
-  'Alfie Lambert helps organisations turn AI from experiments into working systems, across AI transformation, AI agents, workflow redesign, company knowledge, product strategy and company building.'
+  'Co-founder of Oiya, the governed knowledge layer for AI agents. Previously co-founded Lix and BizCrunch, selling B2B data to Gartner, Netflix and others.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         url: 'https://alfielambert.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Alfie Lambert · AI Transformation, Product & GTM',
+        alt: 'Alfie Lambert, co-founder of Oiya',
       },
     ],
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://alfielambert.com/og-image.jpg',
-        alt: 'Alfie Lambert · AI Transformation, Product & GTM',
+        alt: 'Alfie Lambert, co-founder of Oiya',
       },
     ],
   },
@@ -77,9 +77,9 @@ const structuredData = {
   name: 'Alfie Lambert',
   url: 'https://alfielambert.com',
   image: 'https://alfielambert.com/headshots/hero.jpg',
-  jobTitle: 'AI Transformation, Product and GTM Leader',
+  jobTitle: 'Co-founder, Oiya',
   description:
-    'AI transformation, product and GTM leader with more than 12 years building technology companies, working across AI products, agents, company knowledge and workflow redesign.',
+    'Co-founder of Oiya, the governed knowledge layer for AI agents, where he leads go-to-market, positioning and partnerships. Previously co-founded Lix and BizCrunch.',
   worksFor: {
     '@type': 'Organization',
     name: 'Oiya',
@@ -91,15 +91,14 @@ const structuredData = {
   },
   sameAs: [meta.githubUrl, 'https://x.com/AlfieOiya'],
   knowsAbout: [
-    'AI Transformation',
     'AI Agents',
-    'Agentic Systems',
-    'Workflow Design',
-    'Organisational Knowledge',
-    'AI Product Strategy',
+    'Agent Knowledge Infrastructure',
+    'Machine Learning',
     'Product Strategy',
     'Go-to-Market',
+    'Enterprise Sales',
     'B2B Data',
+    'Startup Fundraising',
     'Early-stage Company Building',
   ],
 }

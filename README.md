@@ -2,7 +2,7 @@
 
 My personal website: [alfielambert.com](https://alfielambert.com)
 
-I'm an AI transformation, product and GTM leader with 12+ years building technology companies (Lix, BizCrunch, Oiya). The site is a professional home outside LinkedIn: selected work, the AI systems I build hands-on, writing, speaking and a way to get in touch.
+I'm co-founder of Oiya, the governed knowledge layer for AI agents. Before that I co-founded Lix and BizCrunch. The site is my professional home outside LinkedIn: what I'm building now, companies I've built, systems I've shipped, writing, speaking and a way to get in touch.
 
 ## Stack
 
@@ -27,7 +27,7 @@ This runs a content-generation step first (see below), then starts `next dev`.
 src/app/                  App Router routes (page.tsx, layout.tsx, writing/, privacy/, page-metadata-inspector/)
 src/components/           Homepage sections and shared UI (src/components/ui/)
 src/components/writing/   MDX renderers and article furniture (callouts, figures, related posts)
-src/lib/content.ts        All homepage copy: hero, projects, systems, capabilities, timeline, speaking
+src/lib/content.ts        All homepage copy: hero, proof, Oiya, companies, systems, principles, timeline, speaking
 src/lib/writing.ts        Reads generated writing content, computes reading time, related posts
 content/writing/*.mdx     Article source files
 scripts/generate-writing-content.mjs   Compiles MDX into a build-time module (see below)
@@ -35,7 +35,7 @@ scripts/generate-writing-content.mjs   Compiles MDX into a build-time module (se
 
 ## Where homepage content lives
 
-Almost all homepage copy (the hero, selected work, hands-on systems, capabilities, timeline, speaking items) is centralised in `src/lib/content.ts`. Components under `src/components/` are mostly presentation; edit content there rather than in JSX where possible.
+Almost all homepage copy (the hero, proof points, Oiya, companies, hands-on systems, principles, timeline, speaking items) is centralised in `src/lib/content.ts`. Components under `src/components/` are mostly presentation; edit content there rather than in JSX where possible.
 
 ## How writing is published
 

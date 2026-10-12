@@ -23,9 +23,9 @@ export function Experience() {
   return (
     <section id="experience" className="border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <SectionLabel number="08" label="Experience" />
+        <SectionLabel number="07" label="Experience" />
         <h2 className="font-display font-extrabold text-3xl md:text-4xl mt-6 mb-14 tracking-tight">
-          More than 12 years across technology, product and company building
+          12+ years building technology companies
         </h2>
 
         {/* Legend */}

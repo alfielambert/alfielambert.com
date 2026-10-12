@@ -5,10 +5,11 @@ import { BrutalistButton } from '@/components/ui/BrutalistButton'
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xljrpejl'
 
 const ENQUIRY_TYPES = [
-  'AI transformation / advisory',
-  'Opportunities and collaborations',
+  'Oiya',
+  'Investing',
+  'Partnerships',
+  'Advisory',
   'Speaking',
-  'Product or company building',
   'Something else',
 ]
 

@@ -21,7 +21,7 @@ export function Hero() {
   return (
     <section id="hero" className="pt-16">
       {/* Main hero grid */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-12 lg:pt-20 lg:pb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-8 pb-10 lg:pt-14 lg:pb-12">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
 
           {/* Left: Copy */}
@@ -35,40 +35,40 @@ export function Hero() {
 
             <motion.h1
               {...fadeUp(0.1)}
-              className="font-display font-extrabold text-[40px] sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[88px] leading-[0.95] tracking-tight text-balance mb-8"
+              className="font-display font-extrabold text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] xl:text-[80px] leading-[0.95] tracking-tight text-balance mb-6 lg:mb-8"
             >
-              {hero.headlineParts[0]}{' '}
+              {hero.headline.before}{' '}
               <span className="relative inline-block px-1">
                 <span className="absolute inset-x-0 top-[6%] bottom-[4%] bg-yellow" aria-hidden="true" />
-                <span className="relative">{hero.headlineParts[1]}</span>
+                <span className="relative">{hero.headline.highlight}</span>
               </span>{' '}
-              {hero.headlineParts[2]}
+              {hero.headline.after}
             </motion.h1>
 
             <motion.p
               {...fadeUp(0.2)}
-              className="text-lg md:text-xl text-ink-mid leading-relaxed max-w-xl mb-10"
+              className="text-base sm:text-lg md:text-xl text-ink-mid leading-relaxed max-w-2xl mb-8 lg:mb-10"
             >
               {hero.subheading}
             </motion.p>
 
             <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-4">
-              <BrutalistButton href="#work" variant="filled" size="lg">
-                See my work
+              <BrutalistButton href="#oiya" variant="filled" size="lg">
+                What I&rsquo;m building
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M8 3L8 13M8 13L3 8M8 13L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </BrutalistButton>
-              <BrutalistButton href="/writing" variant="outline" size="lg">
-                Read my writing
+              <BrutalistButton href="#contact" variant="outline" size="lg">
+                Get in touch
               </BrutalistButton>
             </motion.div>
           </div>
 
-          {/* Right: Portrait */}
+          {/* Right: Portrait (desktop only, so proof and Oiya come first on phones) */}
           <motion.div
             {...(shouldReduce ? {} : { initial: { opacity: 0, x: 24 }, animate: { opacity: 1, x: 0 }, transition: { duration: 0.7, delay: 0.2, ease } })}
-            className="relative self-start w-[280px] sm:w-[320px] lg:w-[360px] mx-auto lg:mx-0 lg:mt-6 flex-shrink-0"
+            className="relative self-start hidden lg:block w-[340px] xl:w-[360px] lg:mt-6 flex-shrink-0"
           >
             {/* Yellow offset block */}
             <div
@@ -83,38 +83,13 @@ export function Hero() {
                 fill
                 className="object-cover object-top grayscale"
                 priority
-                sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 360px"
+                sizes="320px"
               />
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Evidence strip */}
-      <div className="bg-ink border-y-2 border-ink overflow-x-hidden">
-        <div
-          className="px-6 md:px-10 py-4 flex items-center justify-center gap-0 overflow-x-auto scrollbar-none"
-          role="list"
-          aria-label="Key achievements"
-        >
-          {hero.evidence.map((item, i) => (
-            <div
-              key={item}
-              className="flex items-center flex-shrink-0"
-              role="listitem"
-            >
-              {i > 0 && (
-                <span className="text-yellow/40 mx-6 font-mono-alt text-xs select-none" aria-hidden="true">
-                  /
-                </span>
-              )}
-              <span className="font-mono-alt text-xs tracking-widest uppercase text-cream whitespace-nowrap">
-                {item}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
     </section>
   )
 }

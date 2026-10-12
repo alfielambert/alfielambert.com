@@ -10,7 +10,7 @@ export function About() {
   return (
     <section id="about" className="border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <SectionLabel number="09" label="About" />
+        <SectionLabel number="08" label="About" />
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mt-12 items-start">
           {/* Copy */}
@@ -21,7 +21,7 @@ export function About() {
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
           >
             <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight mb-8">
-              I connect what AI can do with how organisations actually work.
+              {about.headline}
             </h2>
             <div className="space-y-5">
               {about.paragraphs.map((p, i) => (

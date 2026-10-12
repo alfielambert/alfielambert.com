@@ -11,7 +11,7 @@ export function Contact() {
   return (
     <section id="contact" className="bg-ink border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
-        <SectionLabel number="10" label="Contact" light />
+        <SectionLabel number="09" label="Contact" light />
 
         <motion.div
           initial={shouldReduce ? {} : { opacity: 0, y: 32 }}
@@ -21,11 +21,11 @@ export function Contact() {
           className="mt-10"
         >
           <h2 className="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-tight text-cream mb-6 max-w-3xl leading-tight">
-            Let&rsquo;s talk about putting AI to work.
+            Get in touch.
           </h2>
 
           <p className="text-cream/60 text-lg max-w-xl mb-12 leading-relaxed">
-            I&rsquo;m open to conversations about AI transformation, product leadership, selected advisory work, speaking and other interesting opportunities.
+            I&rsquo;m always happy to talk with founders, investors, customers and people building interesting things in AI and data.
           </p>
 
           <ContactForm />

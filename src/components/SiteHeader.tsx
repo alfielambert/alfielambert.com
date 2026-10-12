@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
 const navLinks = [
-  { label: 'Writing', href: '/writing' },
-  { label: 'Work', href: '/#work' },
+  { label: 'Oiya', href: '/#oiya' },
+  { label: 'Companies', href: '/#companies' },
   { label: 'Systems', href: '/#systems' },
-  { label: 'Speaking', href: '/#speaking' },
+  { label: 'Writing', href: '/writing' },
   { label: 'About', href: '/#about' },
 ]
 
@@ -35,7 +35,7 @@ export function SiteHeader() {
           <Link
             href="/"
             className="font-display font-extrabold text-lg tracking-tight text-ink hover:text-ink transition-colors"
-            aria-label="Alfie Lambert — home"
+            aria-label="Alfie Lambert, home"
           >
             <span className="text-ink">A</span>
             <span className="text-yellow bg-ink px-0.5">L</span>

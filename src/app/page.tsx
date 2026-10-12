@@ -1,10 +1,10 @@
 import { SiteHeader } from '@/components/SiteHeader'
 import { Hero } from '@/components/Hero'
-import { SignatureThesis } from '@/components/SignatureThesis'
-import { SelectedWork } from '@/components/SelectedWork'
+import { Oiya } from '@/components/Oiya'
+import { Companies } from '@/components/Companies'
 import { Systems } from '@/components/Systems'
+import { HowIBuild } from '@/components/HowIBuild'
 import { LatestWriting } from '@/components/LatestWriting'
-import { WhatIDo } from '@/components/WhatIDo'
 import { Speaking } from '@/components/Speaking'
 import { Experience } from '@/components/Experience'
 import { About } from '@/components/About'
@@ -17,11 +17,11 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <SignatureThesis />
-        <SelectedWork />
+        <Oiya />
+        <Companies />
         <Systems />
+        <HowIBuild />
         <LatestWriting />
-        <WhatIDo />
         <Speaking />
         <Experience />
         <About />

@@ -17,7 +17,7 @@ export function LatestWriting() {
   return (
     <section id="writing" className="border-t-2 border-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <SectionLabel number="05" label="Latest writing" />
+        <SectionLabel number="05" label="Writing" />
         <h2 className="font-display font-extrabold text-3xl md:text-4xl mt-6 mb-14 tracking-tight">
           From the notebook
         </h2>

@@ -2,12 +2,13 @@ export const personId = 'https://alfielambert.com/#person'
 
 export const author = {
   name: 'Alfie Lambert',
-  role: 'AI transformation, product & GTM leader.',
-  bio: 'I help organisations turn AI from experiments into working systems, across product, agents and go-to-market.',
+  role: 'Co-founder of Oiya.',
+  bio: 'Co-founder of Oiya, the governed knowledge layer for AI agents. Previously co-founded Lix and BizCrunch.',
 }
 
 export const meta = {
   githubUrl: 'https://github.com/alfielambert',
+  oiyaUrl: 'https://oiya.ai',
   // TODO: Add booking link when available
   bookingLink: null as string | null,
   // TODO: Add a public-safe CV (current version exposes a personal phone number and email). Place at /cv.pdf in public/
@@ -15,26 +16,22 @@ export const meta = {
 }
 
 export const hero = {
-  eyebrow: 'AI Transformation · Product · Company Building',
-  headlineParts: ['I turn AI from experiments into', 'working systems.', ''],
+  eyebrow: 'Co-founder · Oiya',
+  headline: { before: 'I build', highlight: 'AI and data', after: 'companies, and take them to market.' },
   subheading:
-    'Founder and product leader with 12+ years building technology companies. I work across AI products, agents, company knowledge and workflow redesign, connecting what the technology can do with how organisations actually work.',
-  evidence: [
-    'Approximately $1m ARR',
-    '£500k raised',
-    'Enterprise deals',
-    '12+ years building technology companies',
-  ],
+    "I'm co-founder of Oiya, the governed knowledge layer between company data and AI agents, where I lead go-to-market. Before Oiya, I co-founded Lix and BizCrunch, taking B2B data products from first version through to enterprise sales and fundraising.",
 }
 
-export const thesis = {
-  lead: 'The unit of AI transformation is the workflow.',
-  support:
-    'Models matter, but most of the value is won or lost in the surrounding system: the context an AI can access, the handoffs between people and agents, the controls on what it can do, and whether the workflow itself has actually been redesigned.',
-  principles: [
-    'Workflow before model.',
-    'Context is infrastructure.',
-    'Measure changed work, not AI adoption.',
+export const oiya = {
+  headline: 'The governed knowledge layer between company data and AI agents.',
+  problem:
+    "Companies are deploying more AI agents every quarter, and each one gets its own prompt, retrieval setup and memory. With no shared source of truth underneath, they drift apart on the basics: pricing, definitions, processes, customer context. A sales agent quotes this quarter's pricing while the support agent is still quoting last quarter's.",
+  solution:
+    'Oiya sits underneath every agent. It connects the sources a company already uses, organises business definitions and decisions into a governed knowledge graph, and gives every agent one place to read from and write back to. Nothing becomes canonical without human approval, and when the business changes, every agent stays aligned.',
+  facts: [
+    { label: 'Role', value: 'Co-founder · GTM & Partnerships' },
+    { label: 'Founding team', value: 'Adil Karim, Ben Turner, Alfie Lambert' },
+    { label: 'Since', value: 'January 2026' },
   ],
 }
 
@@ -45,105 +42,75 @@ export interface ProjectLink {
   href: string
 }
 
-export interface Project {
+export interface Company {
   id: string
-  number: string
   name: string
-  tagline: string
   role: string
   dates: string
   description: string
-  what: string
   outcomes: string[]
-  tags: string[]
   accentColor: AccentColor
   links?: ProjectLink[]
 }
 
-export const projects: Project[] = [
-  {
-    id: 'oiya',
-    number: '01',
-    name: 'Oiya',
-    tagline: 'Building company knowledge infrastructure for AI agents',
-    role: 'Co-founder · Product and GTM leadership',
-    dates: 'January 2026–Present',
-    description:
-      'Oiya gives AI agents a shared layer of structured, evolving company knowledge, so agents can work from reliable context rather than fragmented documents, stale prompts or isolated memories.',
-    what:
-      'I co-founded the business and lead product and GTM: positioning, the investor narrative, customer discovery and the commercial pipeline.',
-    outcomes: [
-      'Secured two letters of intent',
-      'Developed the product positioning, investor narrative and commercial pipeline',
-      'Built multi-model GTM tooling and supporting workflows',
-    ],
-    tags: ['AI Agents', 'Company Knowledge', 'Agent Context'],
-    accentColor: 'yellow',
-    links: [{ label: 'Oiya', href: 'https://oiya.ai' }],
-  },
-  {
-    id: 'bizcrunch',
-    number: '02',
-    name: 'BizCrunch',
-    tagline: 'A data platform for small-business acquisition',
-    role: 'Co-founder · Product & Growth Lead',
-    dates: 'April 2023–January 2026',
-    description:
-      'A data, analysis and outreach platform for acquisition entrepreneurs, search funds and professional buyers looking for UK businesses, combining Companies House data with enrichment, financial analysis and direct outreach tools.',
-    what:
-      'I acted as product manager and led a team of four, working across product, positioning and commercial development from early customer discovery through to launch and growth.',
-    outcomes: [
-      'Raised £500,000',
-      'Built AI-assisted company-classification capabilities, replacing vague SIC codes with useful categories',
-      'Took the company through the Block Dojo accelerator and won the cohort presentation-day pitch, with BizCrunch fully funded on presentation day',
-      'Hosted and produced the company podcast',
-    ],
-    tags: ['B2B Data', 'Product Leadership', 'AI Classification', 'Podcast Host'],
-    accentColor: 'coral',
-    links: [{ label: 'Block Dojo interview (CoinGeek)', href: 'https://www.youtube.com/watch?v=inLbFm5LS4U' }],
-  },
+export const companiesIntro =
+  "Before Oiya, I co-founded two B2B data companies. Both times the job was the same: build the product, find out who'll pay for it, and get it to them."
+
+export const companies: Company[] = [
   {
     id: 'lix',
-    number: '03',
     name: 'Lix',
-    tagline: 'Bootstrapping B2B data infrastructure to enterprise delivery',
-    role: 'Director · Formerly operating co-founder',
-    dates: 'November 2020–Present',
+    role: 'Co-founder · now Director',
+    dates: 'Since November 2020',
     description:
-      'Lix builds B2B people and company data products, APIs and enterprise data infrastructure for sales, recruitment, research and technology teams.',
-    what:
-      'I was an operating co-founder and now retain a director role. As an operator, I helped bootstrap the business to approximately $1m ARR with a two-person team and led enterprise deals with organisations including Gartner, Trend Micro, Netflix, LEK and Samsung.',
+      'B2B people and company data: self-service products, APIs and enterprise data infrastructure for sales, recruitment, research and technology teams.',
     outcomes: [
-      'Bootstrapped to approximately $1m ARR with a two-person team',
-      'Led enterprise deals with Gartner, Trend Micro, Netflix, LEK and Samsung',
-      'Built acquisition channels across product-led growth, content, partnerships and enterprise sales',
+      'Products used by tens of thousands of people',
+      'Built acquisition across product-led growth, content, partnerships and enterprise sales',
+      'Led enterprise deals with Gartner, Trend Micro, Netflix, L.E.K. Consulting and Samsung',
+      'Helped take the business from self-service data products into enterprise API and data-infrastructure delivery',
     ],
-    tags: ['B2B Data', 'API', 'Enterprise Sales', 'Bootstrapped'],
     accentColor: 'blue',
     links: [{ label: 'Lix', href: 'https://lix-it.com' }],
   },
+  {
+    id: 'bizcrunch',
+    name: 'BizCrunch',
+    role: 'Co-founder · Product & Growth',
+    dates: 'April 2023–January 2026',
+    description:
+      'A data, analysis and outreach platform for people buying UK small businesses: acquisition entrepreneurs, search funds and professional buyers.',
+    outcomes: [
+      'Raised pre-seed and seed rounds',
+      'Product manager for a team of four, from customer discovery through launch to thousands of users',
+      'Won the Block Dojo cohort pitch and secured full programme funding on presentation day',
+      'Led development of AI-powered industry classification, replacing broad SIC codes with commercially useful categories',
+    ],
+    accentColor: 'coral',
+    links: [{ label: 'Block Dojo interview (CoinGeek)', href: 'https://www.youtube.com/watch?v=inLbFm5LS4U' }],
+  },
 ]
 
-export const capabilities = [
+export const principles = [
   {
     number: '01',
-    title: 'AI transformation and workflow redesign',
-    body: 'Identifying which workflows are worth changing, deciding where AI or agents actually belong in them, designing the handoffs between people and agents, and defining outcomes that can be measured.',
+    title: 'Start with the commercial problem',
+    body: "Technology matters when it changes what a customer can do, how quickly they can do it, what it costs or what they get from it. I start there and work back to the product.",
   },
   {
     number: '02',
-    title: 'AI agents, knowledge and context',
-    body: 'Organisational knowledge, context, permissions and controls: the infrastructure agents need around them to work reliably rather than impressively in a demo.',
+    title: 'Get in front of buyers early',
+    body: 'Product, positioning and GTM should develop together. An imperfect product in front of a real buyer teaches more than months of refining assumptions internally.',
   },
   {
     number: '03',
-    title: 'Product strategy and positioning',
-    body: 'Turning technically complex capability into a product and a proposition that technical and commercial audiences can both understand and buy.',
+    title: 'Build distribution alongside the product',
+    body: "A product without a route to customers isn't finished. I've built that route through product-led growth, content, partnerships and enterprise sales.",
   },
   {
     number: '04',
-    title: 'Company building and GTM',
-    body: 'Validation, early product development, fundraising, distribution, enterprise sales and the commercial traction that turns a working system into a business.',
+    title: 'Stay close to the technology',
+    body: 'I still prototype, write code where it helps and work directly with APIs, models and automation. Knowing what the technology can actually do makes product and positioning decisions faster.',
   },
 ]
 
@@ -163,81 +130,73 @@ export interface SystemProject {
 
 export const systems = {
   intro:
-    'Positioning aside, this is the work itself: production systems combining AI models, APIs and deterministic logic, built to solve specific commercial problems.',
+    "I'm a commercial founder who still builds. I prototype, work directly with APIs and models, and design agent workflows myself. These are systems I've designed and shipped.",
   projects: [
     {
       number: '01',
       title: 'Governed agent knowledge',
       description:
-        'I design and operate structured knowledge and agent workflows using OpenLore, including personal and team workspaces, agent instructions, memory, SOPs and MCP-based access. I also built Second Brain, a deterministic knowledge-governance system that turns evidence into controlled knowledge for agents.',
+        "Second Brain is an open-source Python system I built that turns evidence into approved, traceable knowledge and compiles task-specific context for AI agents. It's designed to share that knowledge across agents through OpenLore and MCP, and I run my own agent workspaces, instructions and SOPs on OpenLore.",
       visual: {
-        type: 'list',
-        items: [
-          'Personal and team workspaces',
-          'Agent instructions and memory',
-          'SOPs',
-          'MCP-based access',
-        ],
+        type: 'flow',
+        steps: ['Evidence', 'Review', 'Approved knowledge', 'Agent context'],
       },
-      tags: ['MCP', 'Agent Memory', 'Knowledge Systems'],
+      tags: ['Python', 'MCP', 'Agent Knowledge'],
       links: [
-        { label: 'OpenLore', href: 'https://github.com/alfielambert/OpenLore' },
         { label: 'Second Brain', href: 'https://github.com/alfielambert/second-brain' },
+        { label: 'OpenLore', href: 'https://github.com/aakarim/OpenLore' },
       ],
     },
     {
       number: '02',
+      title: 'Multi-model market intelligence',
+      description:
+        "Internal tools for Oiya's GTM that run a fixed set of prompts across several AI models, record how each one describes and recommends companies in our market, and track competitor presence and content gaps over time. Testing model output against known data also shows where deterministic logic does the job more reliably than another model call.",
+      visual: {
+        type: 'transform',
+        from: 'Model outputs',
+        to: 'Market signal',
+      },
+      tags: ['Python', 'Model APIs', 'Evaluation'],
+    },
+    {
+      number: '03',
+      title: 'Intent-signal prospecting',
+      description:
+        'A config-driven Python pipeline built on the Lix API. It finds LinkedIn posts by keyword cluster, deduplicates and enriches the authors, finds business email addresses and produces a campaign-ready export, so a live conversation becomes an outreach-ready prospect.',
+      visual: {
+        type: 'flow',
+        steps: ['Keyword clusters', 'LinkedIn posts', 'Author dedup', 'Enrichment', 'Campaign export'],
+      },
+      tags: ['Python', 'Lix API', 'GTM'],
+    },
+    {
+      number: '04',
       title: 'Production workflow automation',
       description:
-        'An n8n workflow that takes a photo sent over Telegram and turns it into a published social post: image handling through Cloudinary, caption generation through OpenAI, publishing through the Meta Graph API, with status checks, retries and a guard that only publishes once every step has actually finished.',
+        'An n8n workflow I deployed for a paying client. A photo sent over Telegram becomes a published social post: Cloudinary handles the image, OpenAI writes the caption within set constraints and the Meta Graph API publishes it, with retries, credential controls and a guard that only publishes once every step has finished.',
       visual: {
         type: 'flow',
         steps: ['Telegram photo', 'Cloudinary', 'OpenAI', 'Meta Graph API', 'Published post'],
       },
       tags: ['n8n', 'APIs', 'Automation'],
     },
-    {
-      number: '03',
-      title: 'Intent-signal prospecting',
-      description:
-        'A workflow built on the Lix API that searches LinkedIn posts by keyword cluster, deduplicates the authors behind them, enriches the resulting people, finds verified contact details and produces a campaign-ready export, turning a live conversation into an outreach-ready prospect.',
-      visual: {
-        type: 'flow',
-        steps: ['Keyword clusters', 'LinkedIn posts', 'Author dedup', 'Enrichment', 'Campaign export'],
-      },
-      tags: ['Lix API', 'LLM Classification', 'GTM'],
-    },
-    {
-      number: '04',
-      title: 'Practical model evaluation',
-      description:
-        'Running a fixed prompt bank across several models, recording where a brand gets mentioned, comparing outputs over time and testing classification quality against known data, then deciding where deterministic logic is more reliable than adding another model.',
-      visual: {
-        type: 'transform',
-        from: 'Model outputs',
-        to: 'Evaluated signal',
-      },
-      tags: ['Model Evaluation', 'Python', 'Deterministic Logic'],
-    },
   ] as SystemProject[],
   closing:
-    'The pattern across all of these is the same: combine AI models with deterministic logic, clear controls and a human gate where judgement still matters, rather than trusting a model to run the whole thing unsupervised.',
+    "The pattern across all of these: AI models where they add something, deterministic logic where it's more reliable, and a person signing off where judgement matters.",
 }
 
 export const about = {
+  headline: "I've spent my career building technology companies.",
   paragraphs: [
-    'More than 12 years building technology companies, from early-stage product and growth through to enterprise commercial delivery.',
-    'At Lix, I helped bootstrap a B2B data business to approximately $1m in annual recurring revenue with a two-person team, and led enterprise deals with organisations including Gartner, Trend Micro and Samsung. At BizCrunch, I acted as product manager for a team of four, took the company through the Block Dojo accelerator and helped raise £500,000. At Oiya, I am building company knowledge infrastructure for AI agents from the ground up.',
-    'My role now is usually the same wherever I apply it: connecting what AI and modern software can actually do with how an organisation really works, then making that useful to the people who have to adopt it.',
-    'Before moving into technology, I returned to education through an access course, achieved a 100% distinction rate and went on to study Human, Social and Political Sciences at the University of Cambridge. The plan was to become a journalist, and I still love to write, but I was bitten by the tech bug and that led me down the path I\'ve been on ever since.',
+    'At Lix, which I co-founded with Adil Karim, we built B2B data products used by tens of thousands of people. I led enterprise deals with organisations including Gartner, Trend Micro, Netflix, L.E.K. Consulting and Samsung.',
+    'At BizCrunch, I was product manager for a team of four, took the platform to thousands of users, raised pre-seed and seed rounds and won the Block Dojo accelerator cohort pitch.',
+    "Today I'm co-founder of Oiya with Adil and Ben Turner, building the governed knowledge layer between company data and AI agents. I lead go-to-market, positioning and partnerships.",
+    "My first role close to ML & AI was at Pivigo in 2017, working on growth for a platform that connected organisations with data scientists. Since then I've built with LLMs, data pipelines, APIs, automation and agent systems.",
+    'While at University, I ran marketing at early-stage companies, including Strawberries & Creem festival, where I helped grow attendance tenfold to 10,000.',
+    "Before moving into technology, I returned to education through an access course, achieved a 100% distinction rate and went on to study Human, Social and Political Sciences at the University of Cambridge. The plan was to become a journalist, and I still love to write, but I was bitten by the tech bug and that led me down the path I've been on ever since.",
   ],
 }
-
-export const speakingTopics = [
-  'AI transformation starts with workflow design',
-  'Building reliable AI agents: context, knowledge and human handoffs',
-  'From pilots to production: where enterprise AI programmes go wrong',
-]
 
 export interface SpeakingLink {
   label: string
@@ -262,7 +221,7 @@ export const speaking: SpeakingItem[] = [
     type: 'Podcast host',
     title: 'The M&A Zing Podcast',
     description:
-      'I created and hosted a specialist podcast covering the small-business acquisition market. Across 44 full episodes, I interviewed founders, investors and acquisition entrepreneurs. The Buy-Side Breakdown series assessed real businesses for sale and how a buyer might grow them.',
+      "I created and hosted BizCrunch's podcast on the small-business acquisition market, interviewing founders, investors and acquisition entrepreneurs across 44 full episodes. The Buy-Side Breakdown series assessed real businesses for sale and how a buyer might grow them.",
     stats: ['44 full episodes', 'Nearly 9,500 combined listens and views'],
     image: '/assets/mazing-podcast.jpg',
     imageAlt: 'Cover art for The M&A Zing Podcast, featuring Alfie Lambert',
@@ -277,7 +236,7 @@ export const speaking: SpeakingItem[] = [
     type: 'Media interview',
     title: 'CoinGeek Interview',
     description:
-      'Interviewed during the Block Dojo accelerator about BizCrunch, the acquisition market and how we were using data and technology to improve the process of buying and selling businesses.',
+      'Interviewed during the Block Dojo accelerator about BizCrunch, the acquisition market and how we were using data to make buying and selling small businesses easier.',
     stats: [],
     image: '/assets/coingeek-interview.jpg',
     imageAlt: 'CoinGeek Conversations interview thumbnail featuring BizCrunch',
@@ -296,7 +255,7 @@ export const speaking: SpeakingItem[] = [
     type: 'Conference talk',
     title: 'London Blockchain Conference',
     description:
-      'Spoke on entrepreneurship through acquisition and joined an early-stage company panel covering company building, growth and investment.',
+      'Spoke on entrepreneurship through acquisition and joined a founder panel on company building, growth and investment.',
     stats: [],
     image: '/assets/lbc-talk.jpg',
     imageAlt: 'Alfie Lambert speaking on stage at the London Blockchain Conference',
@@ -323,19 +282,19 @@ export const timeline: TimelineEntry[] = [
   {
     period: 'Jan 2026–Present',
     company: 'Oiya',
-    role: 'Co-founder, Product & GTM Leadership',
+    role: 'Co-founder · GTM & Partnerships',
     type: 'founder',
   },
   {
     period: 'Apr 2023–Jan 2026',
     company: 'BizCrunch',
-    role: 'Co-founder · Product & Growth Lead',
+    role: 'Co-founder · Product & Growth',
     type: 'founder',
   },
   {
     period: 'Nov 2020–Present',
     company: 'Lix',
-    role: 'Director · Formerly Operating Co-founder',
+    role: 'Co-founder · now Director',
     type: 'founder',
   },
   {
